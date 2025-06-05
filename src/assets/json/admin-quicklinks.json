@@ -1,0 +1,37 @@
+[
+    {
+        "Class" : "d-block bg-success-transparent ronded p-2 text-center mb-3 class-hover",
+        "Class1" : "avatar avatar-lg border p-1 border-success rounded-circle mb-2",
+        "Class2" : "d-inline-flex align-items-center justify-content-center w-100 h-100 bg-success rounded-circle",
+        "Class3" : "ti ti-calendar",
+        "Name" : "Calendar",
+        "Class4" : "d-block bg-secondary-transparent ronded p-2 text-center mb-3 class-hover",
+        "Class5" : "avatar avatar-lg border p-1 border-secondary rounded-circle mb-2",
+        "Class6" : "d-inline-flex align-items-center justify-content-center w-100 h-100 bg-secondary rounded-circle",
+        "Class7" : "ti ti-license",
+        "Name1" : "Fees"        
+    },
+    {
+        "Class" : "d-block bg-primary-transparent ronded p-2 text-center mb-3 class-hover",
+        "Class1" : "avatar avatar-lg border p-1 border-primary rounded-circle mb-2",
+        "Class2" : "d-inline-flex align-items-center justify-content-center w-100 h-100 bg-primary rounded-circle",
+        "Class3" : "ti ti-hexagonal-prism",
+        "Name" : "Exam Result",
+        "Class4" : "d-block bg-danger-transparent ronded p-2 text-center mb-3 class-hover",
+        "Class5" : "avatar avatar-lg border p-1 border-danger rounded-circle mb-2",
+        "Class6" : "d-inline-flex align-items-center justify-content-center w-100 h-100 bg-danger rounded-circle",
+        "Class7" : "ti ti-report-money",
+        "Name1" : "Home Works"        
+    }, {
+        "Class" : "d-block bg-warning-transparent ronded p-2 text-center mb-3 class-hover",
+        "Class1" : "avatar avatar-lg border p-1 border-warning rounded-circle mb-2",
+        "Class2" : "d-inline-flex align-items-center justify-content-center w-100 h-100 bg-warning rounded-circle",
+        "Class3" : "ti ti-calendar-share",
+        "Name" : "Attendance",
+        "Class4" : "d-block bg-skyblue-transparent ronded p-2 text-center mb-3 class-hover",
+        "Class5" : "avatar avatar-lg border p-1 border-skyblue rounded-circle mb-2",
+        "Class6" : "d-inline-flex align-items-center justify-content-center w-100 h-100 bg-skyblue rounded-circle",
+        "Class7" : "ti ti-file-pencil",
+        "Name1" : "Reports"        
+    }
+]

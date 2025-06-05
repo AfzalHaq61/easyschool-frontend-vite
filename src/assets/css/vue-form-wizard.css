@@ -1,0 +1,169 @@
+.vue-form-wizard.md .wizard-navigation .wizard-progress-with-circle {
+    top: 24px !important;
+    height: 2px !important;
+    background-color: #eee !important;
+    /*Temporarly*/
+    display: none;
+  }
+  .vue-form-wizard
+    .wizard-navigation
+    .wizard-progress-with-circle
+    .wizard-progress-bar {
+    background-color: #2cbacc !important;
+  }
+  .vue-form-wizard.md .wizard-icon-circle {
+    border-color: #eee;
+    color: #eee;
+    background-color: #fff;
+    width: 56px !important;
+    height: 56px !important;
+    border-width: 2px !important;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 1;
+  }
+  .vue-form-wizard.md .wizard-nav-pills > li:not(.active) .wizard-icon-circle.checked .wizard-icon {
+    line-height: 47px !important;
+  }
+  .vue-form-wizard.md
+    .wizard-nav-pills
+    > li:not(.active)
+    .wizard-icon-circle.checked {
+    background-color: #2cbacc !important;
+  }
+  .vue-form-wizard.md
+    .wizard-nav-pills
+    > li:not(.active)
+    .wizard-icon-circle.checked
+    .wizard-icon {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-size: 0 !important;
+    line-height: 38px;
+  }
+  .vue-form-wizard.md
+    .wizard-nav-pills
+    > li:not(.active)
+    .wizard-icon-circle.checked
+    .wizard-icon::before {
+    content: "\f00c";
+    font-size: 18px !important;
+    color: #5156be;
+  }
+  .vue-form-wizard.md .wizard-nav-pills > li > a .wizard-icon {
+    font-size: 18px !important;
+    font-style: normal !important;
+  }
+  .vue-form-wizard
+    .wizard-nav-pills
+    > li.active
+    > a
+    .wizard-icon-circle.checked
+    .wizard-icon-container {
+    background-color: #fff !important;
+    border-radius: 50%;
+  }
+  .vue-form-wizard
+    .wizard-nav-pills
+    > li.active
+    > a
+    .wizard-icon-circle.checked
+    .wizard-icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-size: 0 !important;
+    line-height: 38px;
+    color: #2cbacc !important;
+  }
+  .vue-form-wizard
+    .wizard-nav-pills
+    > li.active
+    > a
+    .wizard-icon-circle.checked
+    .wizard-icon::before {
+    content: "\f007";
+    font-size: 18px !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .vue-form-wizard.md .wizard-icon-circle + .stepTitle {
+    color: #999 !important;
+    font-size: 14px;
+    margin-top: 1.25rem !important;
+  }
+  .vue-form-wizard.md .wizard-icon-circle + .stepTitle.active {
+    color: #333 !important;
+  }
+  .vue-form-wizard .wizard-nav-pills > li.active > a .wizard-icon-circle.checked .wizard-icon::before {
+    color: #5156be !important;
+  }
+  .vue-form-wizard.md .wizard-nav-pills > li:not(.active) .wizard-icon-circle.checked {
+    border: 1px solid rgba(81,86,190,.2) !important;
+    background-color: rgba(81,86,190,.2) !important;
+  }
+  .vue-form-wizard .wizard-icon-circle.checked {
+    border: 1px solid rgba(81,86,190,.2) !important;
+  }
+  .vue-form-wizard .wizard-nav > li::before, .vue-form-wizard .wizard-nav > li::after {
+    top: 30px !important;
+    width: 41% !important;
+  }
+  .vue-form-wizard .wizard-icon-circle.checked .wizard-icon-container {
+    background-color: #2cbacc !important;
+  }
+  .vue-form-wizard .wizard-footer-right .wizard-btn {
+    color: #fff;
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    border-width: 1px !important;
+  }
+  .vue-form-wizard .wizard-footer-left .wizard-btn {
+    color: #fff;
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    border-width: 1px !important;
+  }
+  .vue-form-wizard .wizard-nav > li::before,
+  .vue-form-wizard .wizard-nav > li::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 22px;
+    width: 50%;
+    height: 2px;
+    background-color: #e9e9ef;
+    z-index: 0;
+  }
+  .vue-form-wizard .wizard-nav > li:first-child::before {
+    display: none;
+  }
+  .vue-form-wizard .wizard-nav > li:last-child::after {
+    display: none;
+  }
+  .vue-form-wizard .wizard-nav > li::after {
+    right: 0;
+  }
+  .vue-form-wizard .wizard-nav > li::before {
+    left: 0;
+  }
+  .vue-form-wizard .wizard-nav > li.active::after,
+  .vue-form-wizard .wizard-nav > li.active ~ li::before,
+  .vue-form-wizard .wizard-nav > li.active ~ li::after {
+    background-color: #eee;
+  }
+  

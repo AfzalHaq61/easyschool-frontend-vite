@@ -1,0 +1,33 @@
+.custom-offcanvas {
+    &.offcanvas.offcanvas-end {
+        width: 600px !important;
+        .offcanvas-header {
+            .close-btn {
+                width: 20px;
+                height: 20px;
+                color: $white;
+                @include rounded(50%);
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                align-items: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                justify-content: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                background-color: $gray-500;
+                border: 1px solid $gray-500;
+                &:hover {
+                    background: $danger;
+                    border-color: $danger;
+                }
+            }
+        }
+    }
+}
+.list-styled-dotted {
+    li {
+        list-style-type: disc;
+    }
+}

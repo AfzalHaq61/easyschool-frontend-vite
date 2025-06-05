@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "Class": "notes-card",
+        "Badge_class": "badged",
+        "Badge": "Low",
+        "Title": "Plan a trip to another country",
+        "Content": "Space, the final frontier. These are the voyages of the Starship Enterprise.",
+        "Image": "avatar-01.jpg",
+        "Role": "Personal"
+    },
+    {
+        "id": 2,
+        "Class": "notes-card medium",
+        "Badge_class": "badged medium",
+        "Badge": "Medium",
+        "Title": "Improve touch typing",
+        "Content": "Well, the way they make shows is, they make one show.",
+        "Image": "avatar-02.jpg",
+        "Role": "Work"
+    },
+    {
+        "id": 3,
+        "Class": "notes-card high",
+        "Badge_class": "badged high",
+        "Badge": "High",
+        "Title": "Learn calligraphy",
+        "Content": "Calligraphy, the art of beautiful handwriting. The term may derive from the Greek words.",
+        "Image": "avatar-03.jpg",
+        "Role": "Social"
+    },
+    {
+        "id": 4,
+        "Class": "notes-card medium",
+        "Badge_class": "badged medium",
+        "Badge": "Medium",
+        "Title": "Improve touch typing",
+        "Content": "Well, the way they make shows is, they make one show.",
+        "Image": "avatar-03.jpg",
+        "Role": "Work"
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+      "ID": "35013",
+      "Name": "Janet",
+      "Image": "student-01.jpg",
+      "Class": "III",
+      "Section": "A",
+      "Marks": "89%",
+      "CGPA": "4.2",
+      "Status": "Pass",
+      "StatusClass": "badge bg-success"
+    },
+    {
+      "ID": "35012",
+      "Name": "Joann",
+      "Image": "student-02.jpg",
+      "Class": "IV",
+      "Section": "B",
+      "Marks": "88%",
+      "CGPA": "3.2",
+      "Status": "Pass",
+      "StatusClass": "badge bg-success"
+    },
+    {
+      "ID": "35011",
+      "Name": "Kathleen",
+      "Image": "student-03.jpg",
+      "Class": "II",
+      "Section": "A",
+      "Marks": "69%",
+      "CGPA": "4.5",
+      "Status": "Pass",
+      "StatusClass": "badge bg-success"
+    },
+    {
+      "ID": "35010",
+      "Name": "Gifford",
+      "Image": "student-04.jpg",
+      "Class": "I",
+      "Section": "B",
+      "Marks": "21%",
+      "CGPA": "4.5",
+      "Status": "Pass",
+      "StatusClass": "badge bg-success"
+    },
+    {
+      "ID": "35009",
+      "Name": "Lisa",
+      "Image": "student-05.jpg",
+      "Class": "II",
+      "Section": "B",
+      "Marks": "31%",
+      "CGPA": "3.9",
+      "Status": "Fail",
+      "StatusClass": "badge bg-danger"
+    }
+]

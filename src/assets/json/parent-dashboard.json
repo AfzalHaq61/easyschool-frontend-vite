@@ -1,0 +1,62 @@
+[
+    {
+      "ID": "35013",
+      "Name": "Janet",
+      "Class": "III",
+      "Section": "A",
+      "Image" : "student-01.jpg",
+      "Marks": "89%",
+      "Exams": "Quartely",
+      "Status": "Pass"
+    },
+    {
+      "ID": "35013",
+      "Name": "Joann",
+      "Class": "IV",
+      "Section": "B",
+      "Image" : "student-02.jpg",
+      "Marks": "88%",
+      "Exams": "Practical",
+      "Status": "Pass"
+    },
+    {
+      "ID": "35010",
+      "Name": "Gifford",
+      "Class": "I",
+      "Section": "B",
+      "Image" : "student-04.jpg",
+      "Marks": "21%",
+      "Exams": "Mid Term",
+      "Status": "Pass"
+    },
+    {
+      "ID": "35009",
+      "Name": "Lisa",
+      "Class": "II",
+      "Section": "B",
+      "Image" : "student-05.jpg",
+      "Marks": "31%",
+      "Exams": "Annual",
+      "Status": "Fail"
+    },
+    {
+      "ID": "35015",
+      "Name": "Riana",
+      "Class": "III",
+      "Section": "A",
+      "Image" : "student-08.jpg",
+      "Marks": "89%",
+      "Exams": "Quartely",
+      "Status": "Pass"
+    },
+    {
+      "ID": "35013",
+      "Name": "Angelo",
+      "Class": "IV",
+      "Section": "B",
+      "Image" : "student-06.jpg",
+      "Marks": "88%",
+      "Exams": "Practical",
+      "Status": "Fail"
+    }
+   ]

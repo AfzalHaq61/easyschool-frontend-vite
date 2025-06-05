@@ -1,0 +1,32 @@
+[
+    {
+        "Image" : "teacher-06.jpg",
+        "Name" : "Aaron",
+        "Subject" : "Chemistry"
+    },
+    {
+        "Image" : "teacher-03.jpg",
+        "Name" : "Hellana",
+        "Subject" : "English"
+    },
+    {
+        "Image" : "teacher-05.jpg",
+        "Name" : "Morgan",
+        "Subject" : "Physics"
+    },
+    {
+        "Image" : "teacher-02.jpg",
+        "Name" : "Daniel Josua",
+        "Subject" : "Spanish"
+    },
+    {
+        "Image" : "teacher-01.jpg",
+        "Name" : "Teresa",
+        "Subject" : "Maths"
+    },
+    {
+        "Image" : "teacher-09.jpg",
+        "Name" : "Jacquelin",
+        "Subject" : "Biology"
+    }
+]

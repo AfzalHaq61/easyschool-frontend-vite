@@ -1,0 +1,98 @@
+.student-grid {
+    &.parent {
+        .grid-body {
+            .student-info {
+                .student-name {
+                    h5 {
+                        font-weight: $font-weight-normal;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            ul {
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
+                -ms-flex-pack: space-between;
+                flex-wrap: wrap;
+                li {
+                    margin-right: 10px;
+                    h6 {
+                        font-size: $font-size-14;
+                    }
+                    &:last-child {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .grid-footer {
+            .student-img {
+                img {
+                    width: 24px;
+                    height: 24px;
+                    @include rounded(6px);
+                }
+            }
+        }
+    }
+}
+.modal-card {
+    background: $white;
+    @include rounded(5px);
+    @include margin-padding(0 0 24px, 24px);
+    .col-form-label {
+        @include margin-padding(null, 0 0 5px);
+    }
+}
+.parent-wrap {
+    background: $white;
+    @include margin-padding(0 0 15px, 0);
+    .parent-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        margin-bottom: 15px;
+        .parent-img {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            flex-shrink: 0;
+            img {
+                width: 60px;
+                height: 60px;
+                @include rounded(6px);
+            }
+        }
+        .parent-name {
+            h5 {
+                font-weight: $font-weight-semibold;
+                margin-bottom: 5px;
+            }
+        }
+    }    
+    .info-list {
+        li {
+            @include margin-padding(0 30px 15px 0, null);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+.info-list {
+    li {
+        display: inline-block;
+        p {
+            font-size: $font-size-12;
+            margin-bottom: 5px;
+        }
+        h6 {
+            font-size: $font-size-14;
+            font-weight: $font-weight-normal;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+[
+    {
+        "Period_Time": "02:15 - 03:00 AM",
+        "Subject": "Computer",
+        "Name": "Daniel",
+        "Img": "teacher-02.jpg",
+        "Status": "periods-list bg-transparent-success"
+    },
+    {
+        "Period_Time": "03:15 - 04:00 AM",
+        "Subject": "Env Science",
+        "Name": "Morgan",
+        "Img": "teacher-05.jpg",
+        "Status": "periods-list bg-transparent-info"
+    },
+    {
+        "Period_Time": "01:30 - 02:15 PM",
+        "Subject": "Maths",
+        "Name": "Jacquelin",
+        "Img": "teacher-07.jpg",
+        "Status": "periods-list bg-transparent-danger"
+    },
+    {
+        "Period_Time": "11:30 - 12:15 AM",
+        "Subject": "Chemistry",
+        "Name": "Aaron",
+        "Img": "teacher-06.jpg",
+        "Status": "periods-list bg-transparent-light"
+    },
+    {
+        "Period_Time": "10:45 - 11:30 AM",
+        "Subject": "Physics",
+        "Name": "Teresa",
+        "Img": "teacher-01.jpg",
+        "Status": "periods-list bg-transparent-warning"
+    },
+    {
+        "Period_Time": "09:00 - 09:45 AM",
+        "Subject": "English",
+        "Name": "Hellana",
+        "Img": "teacher-03.jpg",
+        "Status": "periods-list bg-transparent-primary"
+    },
+    {
+        "Period_Time": "09:45 - 10:30 AM",
+        "Subject": "Spanish",
+        "Name": "Erickson",
+        "Img": "teacher-04.jpg",
+        "Status": "periods-list bg-transparent-pending"
+    }
+]

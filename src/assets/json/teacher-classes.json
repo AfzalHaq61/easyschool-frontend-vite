@@ -1,0 +1,27 @@
+[
+    {
+        "Time" : "09:00 - 09:45",
+        "Class" : "text-decoration-line-through badge badge-danger badge-lg mb-2",
+        "Section" : "Class V, B"
+    },
+    {
+        "Time" : "09:00 - 09:45",
+        "Class" : "text-decoration-line-through badge badge-danger badge-lg mb-2",
+        "Section" : "Class IV, C"
+    },
+    {
+        "Time" : "11:30 - 12:15",
+        "Class" : "badge badge-primary badge-lg mb-2",
+        "Section" : "Class V, B"
+    },
+    {
+        "Time" : "01:30 - 02:15",
+        "Class" : "badge badge-primary badge-lg mb-2",
+        "Section" : "Class V, B"
+    },
+    {
+        "Time" : "02:15 - 03:00",
+        "Class" : "badge badge-primary badge-lg mb-2",
+        "Section" : "Class V, B"
+    }
+]

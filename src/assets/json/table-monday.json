@@ -1,0 +1,52 @@
+[
+    {
+      "PeriodTime": "09:00 - 09:45 AM",
+      "Subject": "Subject : English",
+      "Name": "Hellana",
+      "Image": "teacher-03.jpg",
+      "Class": "periods-list bg-transparent-primary"
+    },
+    {
+      "PeriodTime": "09:45 - 10:30 AM",
+      "Subject": "Subject : Spanish",
+      "Name": "Erickson",
+      "Image": "teacher-04.jpg",
+      "Class": "periods-list bg-transparent-pending"
+    },
+    {
+      "PeriodTime": "10:45 - 11:30 AM",
+      "Subject": "Subject : Physics",
+      "Name": "Teresa",
+      "Image": "teacher-01.jpg",
+      "Class": "periods-list bg-transparent-warning"
+    },
+    {
+      "PeriodTime": "11:30 - 12:15 AM",
+      "Subject": "Subject : Chemistry",
+      "Name": "Aaron",
+      "Image": "teacher-06.jpg",
+      "Class": "periods-list bg-transparent-light"
+    },
+    {
+      "PeriodTime": "01:30 - 02:15 PM",
+      "Subject": "Subject : Maths",
+      "Name": "Jacquelin",
+      "Image": "teacher-07.jpg",
+      "Class": "periods-list bg-transparent-danger"
+    },
+    {
+      "PeriodTime": "02:15 - 03:00 AM",
+      "Subject": "Subject : Computer",
+      "Name": "Daniel",
+      "Image": "teacher-02.jpg",
+      "Class": "periods-list bg-transparent-success"
+    },
+    {
+      "PeriodTime": "03:15 - 04:00 AM",
+      "Subject": "Subject : Env Science",
+      "Name": "Morgan",
+      "Image": "teacher-05.jpg",
+      "Class": "periods-list bg-transparent-info"
+    }
+  ]
+  

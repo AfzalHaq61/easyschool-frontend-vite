@@ -1,0 +1,2009 @@
+[
+  {
+    "title": "MAIN",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "Dashboard",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "route": "/dashboard",
+        "active_link": "dashboard",
+        "icon": "ti-layout-dashboard",
+        "subMenus": [
+          {
+            "menuValue": "Admin Dashboard",
+            "route": "/dashboard/admin-dashboard",
+            "active_link": "/dashboard/admin-dashboard"
+          },
+          {
+            "menuValue": "Teacher Dashboard",
+            "route": "/dashboard/teacher-dashboard",
+            "active_link": "/dashboard/teacher-dashboard"
+          },
+          {
+            "menuValue": "Student Dashboard",
+            "route": "/dashboard/student-dashboard",
+            "active_link": "/dashboard/student-dashboard"
+          },
+          {
+            "menuValue": "Parent Dashboard",
+            "route": "/dashboard/parent-dashboard",
+            "active_link": "/dashboard/parent-dashboard"
+          }
+        ]
+      },
+      {
+        "menuValue": "Application",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "active_link": "application",
+        "active_link1": "call",
+        "icon": "ti-layout-list",
+        "subMenus": [
+          {
+            "menuValue": "Chat",
+            "route": "/application/chat",
+            "active_link": "/applications/chat",
+            "customSubmenuTwo": false
+          },
+          {
+            "menuValue": "Calls",
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "route": "/application/call",
+            "active_link": "/application/call",
+            "customSubmenuTwo": false
+          },
+          {
+            "menuValue": "Calendar",
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "route": "/application/calendar",
+            "active_link": "/application/calendar",
+            "customSubmenuTwo": false
+          },
+          {
+            "menuValue": "Email",
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "route": "/application/email",
+            "active_link": "/application/email",
+            "customSubmenuTwo": false
+          },
+          {
+            "menuValue": "Todo",
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "route": "/application/todo",
+            "active_link": "/application/toto",
+            "customSubmenuTwo": false
+          },
+          {
+            "menuValue": "Notes",
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "route": "/application/notes",
+            "active_link": "/application/notes",
+            "customSubmenuTwo": false
+          },
+          {
+            "menuValue": "File Manager",
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "route": "/application/file-manager",
+            "active_link": "/application/file-manager",
+            "customSubmenuTwo": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Layout",
+    "hasSubRoute": true,
+    "showSubRoute": false,
+    "menu": [
+      {
+        "menuValue": "Default",
+        "icon": "ti ti-layout-sidebar",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/layout-default",
+        "active_link": "/layout-default",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Mini",
+        "icon": "ti ti-layout-align-left",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/layout-mini",
+        "active_link": "/layout-mini",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "RTL",
+        "icon": "ti ti-text-direction-rtl",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/layout-rtl",
+        "active_link": "/layout-rtl",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Box",
+        "icon": "ti ti-layout-distribute-vertical",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/layout-box",
+        "active_link": "/layout-box",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Dark",
+        "icon": "ti ti-moon",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/layout-dark",
+        "active_link": "/layout-dark",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "PEOPLES",
+    "hasSubRoute": true,
+    "showSubRoute": false,
+    "active_link": "students",
+    "active_link1": "teachers",
+    "menu": [
+      {
+        "menuValue": "Students",
+        "route": "/students",
+        "active_link": "students",
+        "icon": "ti-school",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "All Students",
+            "route": "/students/student-grid",
+            "active_link": "/students/student-grid",            
+            "active_link1": "/students/add-student",
+            "active_link2": "/students/edit-student",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Student List",
+            "route": "/students/student-list",
+            "active_link": "/students/student-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Student Details",
+            "route": "/students/student-details",
+            "active_link": "/students/student-details",
+            "active_link1": "/students/student-time-table",
+            "active_link2": "/students/student-leaves",
+            "active_link3": "/students/student-fees",
+            "active_link4": "/students/student-result",
+            "active_link5": "/students/student-library",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Student Promotion",
+            "route": "/students/student-promotion",
+            "active_link": "/students/student-promotion",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Parents",
+        "route": "/parents",
+        "active_link": "parent",
+        "icon": "ti-user-bolt",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "All Parents",
+            "route": "/parents/parent-grid",
+            "active_link": "/parents/parent-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Parent List",
+            "route": "/parents/parents",
+            "active_link": "/parents/parents",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Guardians",
+        "route": "/guardians",
+        "active_link": "guardians",
+        "icon": "ti-user-shield",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "All Guardians",
+            "route": "/guardians/guardian-grid",
+            "active_link": "/guardians/guardian-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Guardians List",
+            "route": "/guardians/guardians",
+            "active_link": "/guardians/guardians",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Teachers",
+        "route": "/teachers",
+        "active_link": "teachers",
+        "icon": "ti-users",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "All Teachers",
+            "route": "/teachers/teacher-grid",
+            "active_link1": "/teachers/add-teacher",
+            "active_link2": "/teachers/edit-teacher",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Teacher List",
+            "route": "/teachers/teacher-list",
+            "active_link": "/teachers/teacher-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Teacher Details",
+            "route": "/teachers/teacher-details",
+            "active_link": "/teachers/teacher-details",
+            "active_link1": "/teachers/teacher-leaves",
+            "active_link2": "/teachers/teacher-salary",
+            "active_link3": "/teachers/teacher-library",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Routine",
+            "route": "/teachers/routine-teachers",
+            "active_link": "/teachers/routine-teachers",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "ACADEMIC",
+    "hasSubRoute": true,
+    "showSubRoute": false,
+    "active_link": "classes",
+    "active_link1": "examination",
+    "menu": [
+      {
+        "menuValue": "Classes",
+        "route": "/classes",
+        "active_link": "classes",
+        "icon": "ti-school-bell",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "All Classes",
+            "route": "/classes/classes-list",
+            "active_link": "/classes/classes-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Schedule",
+            "route": "/classes/schedule-classes",
+            "active_link": "/classes/schedule-classes",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Class Room",
+        "icon": "ti-building",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/class-room",
+        "active_link": "/academic/class-room",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Class Routine",
+        "icon": "ti-bell-school",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/class-routine",
+        "active_link": "/academic/class-routine",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Section",
+        "icon": "ti-square-rotated-forbid-2",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/class-section",
+        "active_link": "/academic/class-section",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Subject",
+        "icon": "ti-book",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/class-subject",
+        "active_link": "/academic/class-subject",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Syllabus",
+        "icon": "ti-book-upload",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/class-syllabus",
+        "active_link": "/academic/class-syllabus",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Time Table",
+        "icon": "ti-table",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/class-time-table",
+        "active_link": "/academic/class-time-table",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Home Work",
+        "icon": "ti-license",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/class-home-work",
+        "active_link": "/academic/class-home-work",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Examinations",
+        "route": "/examinations",
+        "active_link": "examinations",
+        "icon": "ti-hexagonal-prism-plus",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Exam",
+            "route": "/examinations/exam-list",
+            "active_link": "/examinations/exam-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Exam Schedule",
+            "route": "/examinations/exam-schedule",
+            "active_link": "/examinations/exam-schedule",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Grade",
+            "route": "/examinations/grade-list",
+            "active_link": "/examinations/grade-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Exam Attendance",
+            "route": "/examinations/exam-attendance",
+            "active_link": "/examinations/exam-attendance",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Exam Results",
+            "route": "/examinations/exam-results",
+            "active_link": "/examinations/exam-results",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Reasons",
+        "icon": "ti-lifebuoy",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/academic/academic-reasons",
+        "active_link": "/academic/academic-reasons",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "MANAGEMENT",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "Fees Collection",
+        "route": "/fees",
+        "active_link": "fees",
+        "icon": "ti-report-money",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Fees Group",
+            "route": "/fees/fees-group",
+            "active_link": "/fees/fees-group",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Fees Type",
+            "route": "/fees/fees-type",
+            "active_link": "/fees/fees-type",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Fees Master",
+            "route": "/fees/fees-master",
+            "active_link": "/fees/fees-master",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Fees Assign",
+            "route": "/fees/fees-assign",
+            "active_link": "/fees/fees-assign",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Collect Fees",
+            "route": "/fees/collect-fees",
+            "active_link": "/fees/collect-fees",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Library",
+        "route": "/library",
+        "active_link": "library",
+        "icon": "ti-notebook",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Library Members",
+            "route": "/library/library-members",
+            "active_link": "/library/library-members",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Books",
+            "route": "/library/library-books",
+            "active_link": "/library/library-books",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Issue Books",
+            "route": "/library/library-issue-book",
+            "active_link": "/library/library-issue-book",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Return",
+            "route": "/library/library-return",
+            "active_link": "/library/library-return",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Sports",
+        "icon": "ti-run",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/management/sports-list",
+        "active_link": "/management/sports-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Players",
+        "icon": "ti ti-play-football",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/management/player-list",
+        "active_link": "/management/player-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Hostel",
+        "route": "/hostel",
+        "active_link": "hostel",
+        "icon": "ti-building-fortress",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Hostel List",
+            "route": "/hostel/hostel-list",
+            "active_link": "/hostel/hostel-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Hostel Rooms",
+            "route": "/hostel/hostel-rooms",
+            "active_link": "/hostel/hostel-rooms",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Room Type",
+            "route": "/hostel/hostel-room-type",
+            "active_link": "/hostel/hostel-room-type",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Transport",
+        "route": "/transport",
+        "active_link": "transport",
+        "icon": "ti-bus",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Routes",
+            "route": "/transport/transport-routes",
+            "active_link": "/transport/transport-routes",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Pickup Points",
+            "route": "/transport/transport-pickup-points",
+            "active_link": "/transport/transport-pickup-points",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Vehicle Drivers",
+            "route": "/transport/transport-vehicle-drivers",
+            "active_link": "/transport/transport-vehicle-drivers",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Vehicle",
+            "route": "/transport/transport-vehicle",
+            "active_link": "/transport/transport-vehicle",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Assign Vehicle",
+            "route": "/transport/transport-assign-vehicle",
+            "active_link": "/transport/transport-assign-vehicle",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HRM",
+    "hasSubRoute": true,
+    "showSubRoute": false,
+    "active_link": "attendance",
+    "active_link1": "Leaves",
+    "menu": [
+      {
+        "menuValue": "Staff",
+        "icon": "ti-users-group",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/hrm/staff-list",
+        "active_link": "/hrm/staff-list",
+        "active_link1": "/hrm/add-staff",
+        "active_link2": "/hrm/edit-staff",
+        "active_link3": "/hrm/staff-details",
+        "active_link4": "/hrm/staff-leaves",
+        "active_link5": "/hrm/staffs-attendance",
+        "active_link6": "/hrm/staff-payroll",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Departments",
+        "icon": "ti-layout-distribute-horizontal",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/hrm/department-list",
+        "active_link": "/hrm/department-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Designation",
+        "icon": "ti-user-exclamation",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/hrm/designation-list",
+        "active_link": "/hrm/designation-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Attendance",
+        "route": "/attendance",
+        "active_link": "attendance",
+        "icon": "ti-calendar-share",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Student Attendance",
+            "route": "/attendance/student-attendance",
+            "active_link": "/attendance/student-attendance",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Teacher Attendance",
+            "route": "/attendance/teacher-attendance",
+            "active_link": "/attendance/teacher-attendance",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Staff Attendance",
+            "route": "/attendance/staff-attendance",
+            "active_link": "/attendance/staff-attendance",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Leaves",
+        "route": "/leaves",
+        "active_link": "leaves",
+        "icon": "ti-calendar-stats",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "List of leaves",
+            "route": "/leaves/list-leaves",
+            "active_link": "/leaves/list-leaves",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Approve Request",
+            "route": "/leaves/approve-request",
+            "active_link": "/leaves/approve-request",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Holidays",
+        "icon": "ti-briefcase",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/hrm/holiday-list",
+        "active_link": "/hrm/holiday-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Payroll",
+        "icon": "ti-moneybag",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/hrm/payroll-list",
+        "active_link": "/hrm/payroll-list",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "FINANCE & ACCOUNTS",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "Accounts",
+        "route": "/accounts",
+        "active_link": "accounts",
+        "icon": "ti-swipe",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Expenses",
+            "route": "/accounts/expenses-list",
+            "active_link": "/accounts/expenses-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Expenses Category",
+            "route": "/accounts/expenses-category",
+            "active_link": "/accounts/expenses-category",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Income",
+            "route": "/accounts/accounts-income",
+            "active_link": "/accounts/accounts-income",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Invoices",
+            "route": "/accounts/accounts-invoices",
+            "active_link": "/accounts/accounts-invoices",
+            "active_link1": "/accounts/add-invoice",
+            "active_link2": "/accounts/edit-invoice",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Invoice View",
+            "route": "/accounts/invoice",
+            "active_link": "/accounts/invoice",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Transcation",
+            "route": "/accounts/accounts-transactions",
+            "active_link": "/accounts/accounts-transactions",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "ANNOUNCEMENTS",
+    "hasSubRoute": true,
+    "showSubRoute": false,
+    "menu": [
+      {
+        "menuValue": "Notice Board",
+        "icon": "ti-clipboard-data",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/announcements/notice-board",
+        "active_link": "/announcements/notice-board",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Events",
+        "icon": "ti-calendar-question",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/announcements/event-list",
+        "active_link": "/announcements/event-list",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "REPORTS",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "Attendance Report",
+        "icon": "ti-calendar-due",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/reports/attendance-report",
+        "active_link": "/reports/attendance-report",
+        "active_link1": "/reports/student-attendance-type",
+        "active_link2": "/reports/daily-attendance",
+        "active_link3": "/reports/student-day-wise",
+        "active_link4": "/reports/teacher-day-wise",
+        "active_link5": "/reports/teacher-report",
+        "active_link6": "/reports/staff-day-wise",
+        "active_link7": "/reports/staff-report",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Class Report",
+        "icon": "ti-graph",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/reports/class-report",
+        "active_link": "/reports/class-report",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Student Report",
+        "icon": "ti-chart-infographic",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/reports/student-report",
+        "active_link": "/reports/student-report",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Grade Report",
+        "icon": "ti-calendar-x",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/reports/grade-report",
+        "active_link": "/reports/grade-report",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Leave Report",
+        "icon": "ti-line",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/reports/leave-report",
+        "active_link": "/reports/leave-report",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Fees Report",
+        "icon": "ti-mask",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/reports/fees-report",
+        "active_link": "/reports/fees-report",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "USER MANAGEMENT",
+    "showAsTab": true,
+    "separateRoute": false,
+    "active_link1": "/user",
+    "menu": [
+      {
+        "menuValue": "Users",
+        "icon": "ti-users-minus",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/user/user-list",
+        "active_link": "/user/user-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Roles & Permissions",
+        "icon": "ti-shield-plus",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/user/roles-permission",
+        "active_link": "/user/roles-permission",
+        "active_link1": "/user/permission",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Delete Account Request",
+        "icon": "ti-user-question",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/user/delete-account",
+        "active_link": "/user/delete-account",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "MEMBERSHIP",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "Membership Plans",
+        "icon": "ti-user-plus",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/membership/membership-plans",
+        "active_link": "/membership/membership-plans",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Membership Addons",
+        "icon": "ti-cone-plus",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/membership/membership-addons",
+        "active_link": "/membership/membership-addons",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Transcation",
+        "icon": "ti-file-power",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/membership/membership-transactions",
+        "active_link": "/membership/membership-transactions",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "Content",
+    "hasSubRoute": true,
+    "showSubRoute": false,
+    "active_link": "blogs",
+    "active_link1": "location",
+    "menu": [
+      {
+        "menuValue": "Pages",
+        "icon": "ti-page-break",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/content/pages-list",
+        "active_link": "/content/pages-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Blog",
+        "route": "/blogs",
+        "active_link": "blogs",
+        "icon": "ti-brand-blogger",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "All Blogs",
+            "route": "/blogs/blog",
+            "active_link": "/blogs/blog",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Categories",
+            "route": "/blogs/blog-categories",
+            "active_link": "/blogs/blog-categories",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Comments",
+            "route": "/blogs/blog-comments",
+            "active_link": "/blogs/blog-comments",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Tags",
+            "route": "/blogs/blog-tags",
+            "active_link": "/blogs/blog-tags",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Location",
+        "route": "/location",
+        "active_link": "location",
+        "icon": "ti-map-pin-search",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Countries",
+            "route": "/location/countries-list",
+            "active_link": "/location/countries-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "States",
+            "route": "/location/states-list",
+            "active_link": "/location/states-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Cities",
+            "route": "/location/cities-list",
+            "active_link": "/location/cities-list",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Testimonials",
+        "icon": "ti-quote",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/content/testimonials-list",
+        "active_link": "/content/testimonials-list",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "FAQ",
+        "icon": "ti-question-mark",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/content/faq",
+        "active_link": "/content/faq",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "SUPPORT",
+    "hasSubRoute": true,
+    "showSubRoute": false,
+    "menu": [
+      {
+        "menuValue": "Contact Messages",
+        "icon": "ti-message",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/support/contact-messages",
+        "active_link": "/support/contact-messages",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Tickets",
+        "icon": "ti-ticket",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/support/ticket-list",
+        "active_link": "/support/ticket-list",
+        "active_link1": "/support/ticket-grid",
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "Pages",
+    "showAsTab": true,
+    "separateRoute": false,
+    "customSubmenuTwo": false,
+    "showSubRoute1": true,
+    "menu": [
+      {
+        "menuValue": "Profile",
+        "icon": "ti-user",
+        "route": "/pages/profile",
+        "active_link": "/pages/profile",
+        "hasSubRoute": false,
+        "showSubRoute": false
+      },
+      {
+        "menuValue": "Error Pages",
+        "icon": "ti-error-404",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "404 Error",
+            "route": "/404-error",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "500 Error",
+            "route": "/500-error",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Blank Page",
+        "icon": "ti-brand-nuxt",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/pages/blank-page",
+        "active_link": "/pages/blank-page",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Coming Soon",
+        "icon": "ti-file",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "route": "/coming-soon",
+        "subRoutes": []
+      },
+      {
+        "menuValue": "Under Maintenance",
+        "icon": "ti-moon-2",
+        "route": "/under-maintenance",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subRoutes": []
+      }
+    ]
+  },
+  {
+    "title": "SETTINGS",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "General Settings",
+        "icon": "ti-shield-cog",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "route": "/settings",
+        "active_link": "settings",
+        "subMenus": [
+          {
+            "menuValue": "Profile Settings",
+            "route": "/settings/profile-settings",
+            "active_link": "/settings/profile-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Security Settings",
+            "route": "/settings/security-settings",
+            "active_link": "/settings/security-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Notifications Settings",
+            "route": "/settings/notifications-settings",
+            "active_link": "/settings/notifications-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Connected Apps",
+            "route": "/settings/connected-apps",
+            "active_link": "/settings/connected-apps",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Website Settings",
+        "route": "/website-settings",
+        "active_link": "website-settings",
+        "icon": "ti-device-laptop",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Company Settings",
+            "route": "/website-settings/company-settings",
+            "active_link": "/website-settings/company-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Localization",
+            "route": "/website-settings/localization",
+            "active_link": "/website-settings/localization",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Prefixes",
+            "route": "/website-settings/prefixes",
+            "active_link": "/website-settings/prefixes",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Preferences",
+            "route": "/website-settings/preferences",
+            "active_link": "/website-settings/preferences",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Social Authentication",
+            "route": "/website-settings/social-authentication",
+            "active_link": "/website-settings/social-authentication",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Language",
+            "route": "/website-settings/language",
+            "active_link": "/website-settings/language",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "App Settings",
+        "route": "/app-settings",
+        "active_link": "app-settings",
+        "icon": "ti-apps",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "base": "app-settings",
+        "subMenus": [
+          {
+            "menuValue": "Invoice Settings",
+            "route": "/app-settings/invoice-settings",
+            "active_link": "/app-settings/invoice-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Custom Fields",
+            "route": "/app-settings/custom-fields",
+            "active_link": "/app-settings/custom-fields",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "System Settings",
+        "route": "system-settings",
+        "active_link": "system-settings",
+        "icon": "ti-file-symlink",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Email Settings",
+            "route": "/system-settings/email-settings",
+            "active_link": "/system-settings/email-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Email Templates",
+            "route": "/system-settings/email-templates",
+            "active_link": "/system-settings/email-templates",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "SMS Settings",
+            "route": "/system-settings/sms-settings",
+            "active_link": "/system-settings/sms-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "OTP Settings",
+            "route": "/system-settings/otp-settings",
+            "active_link": "/system-settings/otp-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "GDPR Cookies",
+            "route": "/system-settings/gdpr-cookies",
+            "active_link": "/system-settings/gdpr-cookies",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Financial Settings",
+        "route": "financial-settings",
+        "active_link": "financial-settings",
+        "icon": "ti-zoom-money",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Payment Gateways",
+            "route": "/financial-settings/payment-gateways",
+            "active_link": "/financial-settings/payment-gateways",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Tax Rates",
+            "route": "/financial-settings/tax-rates",
+            "active_link": "/financial-settings/tax-rates",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Academic Settings",
+        "route": "academic-settings",
+        "active_link": "academic-settings",
+        "icon": "ti-calendar-repeat",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "School Settings",
+            "route": "/academic-settings/school-settings",
+            "active_link": "/academic-settings/school-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Religion",
+            "route": "/academic-settings/religion",
+            "active_link": "/academic-settings/religion",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Other Settings",
+        "route": "others-settings",
+        "active_link": "others-settings",
+        "icon": "ti-flag-cog",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Storage",
+            "route": "/others-settings/storage",
+            "active_link": "/others-settings/storage",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Ban IP Address",
+            "route": "/others-settings/ban-ip-address",
+            "active_link": "/others-settings/ban-ip-address",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "UI INTERFACE",
+    "showAsTab": true,
+    "separateRoute": false,
+    "customSubmenuTwo": false,
+    "showSubRoute1": true,
+    "menu": [
+      {
+        "menuValue": "Base UI",
+        "route": "/base-ui",
+        "active_link": "base-ui",
+        "icon": "ti-hierarchy-2",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Alerts",
+            "route": "/baseui/ui-alerts",
+            "active_link": "/baseui/ui-alerts",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Accordion",
+            "route": "/baseui/ui-accordion",
+            "active_link": "/baseui/ui-accordion",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Avatar",
+            "route": "/baseui/ui-avatar",
+            "active_link": "/baseui/ui-avatar",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Badges",
+            "route": "/baseui/ui-badges",
+            "active_link": "/baseui/ui-badges",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Border",
+            "route": "/baseui/ui-borders",
+            "active_link": "/baseui/ui-borders",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Buttons",
+            "route": "/baseui/ui-buttons",
+            "active_link": "/baseui/ui-buttons",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Button Group",
+            "route": "/baseui/ui-buttons-group",
+            "active_link": "/baseui/ui-buttons-group",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Breadcrumb",
+            "route": "/baseui/ui-breadcrumb",
+            "active_link": "/baseui/ui-breadcrumb",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Card",
+            "route": "/baseui/ui-cards",
+            "active_link": "/baseui/ui-cards",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Carousel",
+            "route": "/baseui/ui-carousel",
+            "active_link": "/baseui/ui-carousel",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Colors",
+            "route": "/baseui/ui-colors",
+            "active_link": "/baseui/ui-colors",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Dropdowns",
+            "route": "/baseui/ui-dropdowns",
+            "active_link": "/baseui/ui-dropdowns",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Grid",
+            "route": "/baseui/ui-grid",
+            "active_link": "/baseui/ui-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Images",
+            "route": "/baseui/ui-images",
+            "active_link": "/baseui/ui-images",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Lightbox",
+            "route": "/baseui/ui-lightbox",
+            "active_link": "/baseui/ui-lightbox",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Media",
+            "route": "/baseui/ui-media",
+            "active_link": "/baseui/ui-media",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Modals",
+            "route": "/baseui/ui-modals",
+            "active_link": "/baseui/ui-modals",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Offcanvas",
+            "route": "/baseui/ui-offcanvas",
+            "active_link": "/baseui/ui-offcanvas",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Pagination",
+            "route": "/baseui/ui-pagination",
+            "active_link": "/baseui/ui-pagination",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Popovers",
+            "route": "/baseui/ui-popovers",
+            "active_link": "/baseui/ui-popovers",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Progress",
+            "route": "/baseui/ui-progress",
+            "active_link": "/baseui/ui-progress",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Placeholders",
+            "route": "/baseui/ui-placeholders",
+            "active_link": "/baseui/ui-placeholders",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Spinner",
+            "route": "/baseui/ui-spinner",
+            "active_link": "/baseui/ui-spinner",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Sweet Alerts",
+            "route": "/baseui/ui-sweetalerts",
+            "active_link": "/baseui/ui-sweetalerts",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Tabs",
+            "route": "/baseui/ui-nav-tabs",
+            "active_link": "/baseui/ui-nav-tabs",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Tooltips",
+            "route": "/baseui/ui-tooltips",
+            "active_link": "/baseui/ui-tooltips",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Typography",
+            "route": "/baseui/ui-typography",
+            "active_link": "/baseui/ui-typography",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Video",
+            "route": "/baseui/ui-video",
+            "active_link": "/baseui/ui-video",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Advanced UI",
+        "route": "/advanced-ui",
+        "active_link": "advanced-ui",
+        "icon": "ti-hierarchy-3",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Ribbon",
+            "route": "/advancedui/ui-ribbon",
+            "active_link": "/advancedui/ui-ribbon",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Clipboard",
+            "route": "/advancedui/ui-clipboard",
+            "active_link": "/advancedui/ui-clipboard",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Drag & Drop",
+            "route": "/advancedui/ui-drag-drop",
+            "active_link": "/advancedui/ui-drag-drop",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Range Slider",
+            "route": "/advancedui/ui-rangeslider",
+            "active_link": "/advancedui/ui-rangeslider",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Rating",
+            "route": "/advancedui/ui-rating",
+            "active_link": "/advancedui/ui-rating",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Text Editor",
+            "route": "/advancedui/ui-text-editor",
+            "active_link": "/advancedui/ui-text-editor",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Counter",
+            "route": "/advancedui/ui-counter",
+            "active_link": "/advancedui/ui-counter",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Scrollbar",
+            "route": "/advancedui/ui-scrollbar",
+            "active_link": "/advancedui/ui-scrollbar",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Sticky Note",
+            "route": "/advancedui/ui-stickynote",
+            "active_link": "/advancedui/ui-stickynote",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Timeline",
+            "route": "/advancedui/ui-timeline",
+            "active_link": "/advancedui/ui-timeline",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Charts",
+        "icon": "ti-chart-line",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "route": "/charts",
+        "active_link": "charts",
+        "subMenus": [
+          {
+            "menuValue": "Apex Charts",
+            "route": "/charts/chart-apex",
+            "active_link": "/charts/chart-apex",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "C3 Charts",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "route": "/charts/chart-c3",
+            "active_link": "/charts/chart-c3",
+            "subRoutes": []
+          },
+          {
+            "menuValue": "Flot Charts",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "route": "/charts/chart-flot",
+            "active_link": "/charts/chart-flot",
+            "subRoutes": []
+          },
+          {
+            "menuValue": "JS Charts",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "route": "/charts/chart-js",
+            "active_link": "/charts/chart-js",
+            "subRoutes": []
+          },
+          {
+            "menuValue": "Morris Charts",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "route": "/charts/chart-morris",
+            "active_link": "/charts/chart-morris",
+            "subRoutes": []
+          }
+        ]
+      },
+      {
+        "menuValue": "Icons",
+        "icon": "ti-icons",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "route": "/icons",
+        "active_link": "icons",
+        "subMenus": [
+          {
+            "menuValue": "Fontawesome Icons",
+            "route": "/icons/icon-fontawesome",
+            "active_link": "/icons/icon-fontawesome",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Feather Icons",
+            "route": "/icons/icon-feather",
+            "active_link": "/icons/icon-feather",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Ionic Icons",
+            "route": "/icons/icon-ionic",
+            "active_link": "/icons/icon-ionic",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Material Icons",
+            "route": "/icons/icon-material",
+            "active_link": "/icons/icon-material",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Pe7 Icons",
+            "route": "/icons/icon-pe7",
+            "active_link": "/icons/icon-pe7",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Simpleline Icons",
+            "route": "/icons/icon-simpleline",
+            "active_link": "/icons/icon-simpleline",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Themify Icons",
+            "route": "/icons/icon-themify",
+            "active_link": "/icons/icon-themify",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Weather Icons",
+            "route": "/icons/icon-weather",
+            "active_link": "/icons/icon-weather",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Typicon Icons",
+            "route": "/icons/icon-typicon",
+            "active_link": "/icons/icon-typicon",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Flag Icons",
+            "route": "/icons/icon-flag",
+            "active_link": "/icons/icon-flag",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      },
+      {
+        "menuValue": "Forms",
+        "icon": "ti-input-search",
+        "active_link": "forms",        
+        "hasSubRouteTwo": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Form Elements",
+            "active_link1": "/form-basic-inputs",
+            "active_link2": "/form-checkbox-radios",
+            "active_link3": "/form-input-groups",
+            "active_link4": "/form-grid-gutters",
+            "active_link5": "/form-select",
+            "active_link6": "/form-mask",
+            "active_link7": "/form-fileupload",
+            "customSubmenuTwo": true,
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "subMenusTwo": [
+              {
+                "menuValue": "Basic Inputs",
+                "route": "/forms/form-basic-inputs",
+                "active_link": "/forms/form-basic-inputs",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "Checkbox & Radios",
+                "route": "/forms/form-checkbox-radios",
+                "active_link": "/forms/form-checkbox-radios",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "Input Groups",
+                "route": "/forms/form-input-groups",
+                "active_link": "/forms/form-input-groups",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "Grid & Gutters",
+                "route": "/forms/form-grid-gutters",
+                "active_link": "/forms/form-grid-gutters",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "Form Select",
+                "route": "/forms/form-select",
+                "active_link": "/forms/form-select",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "Input Masks",
+                "route": "/forms/form-mask",
+                "active_link": "/forms/form-mask",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "File Uploads",
+                "route": "/forms/form-fileupload",
+                "active_link": "/forms/form-fileupload",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              }
+            ]
+          },
+          {
+            "menuValue": "Layouts",
+            "customSubmenuTwo": true,
+            "active_link1": "form-horizontal",
+            "active_link2": "form-vertical",
+            "active_link3": "form-floating-labels",
+            "hasSubRoute": true,
+            "showSubRoute": false,
+            "subMenusTwo": [
+              {
+                "menuValue": "Horizontal Form",
+                "route": "/forms/form-horizontal",
+                "active_link": "/forms/form-horizontal",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "Vertical Form",
+                "route": "/forms/form-vertical",
+                "active_link": "/forms/form-vertical",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              },
+              {
+                "menuValue": "Floating Labels",
+                "route": "/forms/form-floating-labels",
+                "active_link": "/forms/form-floating-labels",
+                "hasSubRoute": false,
+                "showSubRoute": false
+              }
+            ]
+          },
+          {
+            "menuValue": "Form Validation",
+            "route": "/forms/form-validation",
+            "active_link": "/forms/form-validation",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Select2",
+            "route": "/forms/form-select2",
+            "active_link": "/forms/form-select2",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "customSubmenuTwo": false
+          },
+          {
+            "menuValue": "Form Wizard",
+            "route": "/forms/form-wizard",
+            "active_link": "/forms/form-wizard",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "customSubmenuTwo": false
+          }
+
+        ]
+      },
+      {
+        "menuValue": "Tables",
+        "icon": "ti-table-plus",
+        "route": "table",
+        "active_link": "table",
+        "hasSubRoute": true,
+        "showSubRoute": false,
+        "subMenus": [
+          {
+            "menuValue": "Basic Tables",
+            "route": "/tables/tables-basic",
+            "active_link": "/tables/tables-basic",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          },
+          {
+            "menuValue": "Data Table",
+            "route": "/tables/data-tables",
+            "active_link": "/tables/data-tables",
+            "hasSubRoute": false,
+            "showSubRoute": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Help",
+    "showAsTab": true,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "Documentation",
+        "icon": "ti-file-text",
+        "route": "/",
+        "hasSubRoute": false,
+        "showSubRoute": false
+      },
+      {
+        "menuValue": "Changelog",
+        "icon": "ti-exchange",
+        "route": "/",
+        "hasSubRoute": false,
+        "showSubRoute": false
+      },
+      {
+        "menuValue": "Multi Level",
+        "icon": "ti-menu-2",
+        "route": "/",
+        "hasSubRoute": false,
+        "showSubRoute": false
+      }
+    ]
+  }
+]

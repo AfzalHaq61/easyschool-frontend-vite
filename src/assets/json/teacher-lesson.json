@@ -1,0 +1,42 @@
+[
+    {
+        "Section" : "Class V, B",
+        "SecClass" : "bg-success-transparent rounded p-2 fw-semibold mb-3 text-center",
+        "Title" : "Introduction Note to Physics on Tech",
+        "ProgressClass" : "progress-bar bg-success",
+        "Style" : "width: 80%"
+
+    },
+    {
+        "Section" : "Class V, A",
+        "SecClass" : "bg-warning-transparent br-5 p-2 fw-semibold mb-3 text-center",
+        "Title" : "Biometric & their Working Functionality",
+        "ProgressClass" : "progress-bar bg-warning",
+        "Style" : "width: 80%"
+
+    },
+    {
+        "Section" : "Class IV, C",
+        "SecClass" : "bg-info-transparent br-5 p-2 fw-semibold mb-3 text-center",
+        "Title" : "Analyze and interpret literary texts skills",
+        "ProgressClass" : "progress-bar bg-warning",
+        "Style" : "width: 80%"
+
+    },
+    {
+        "Section" : "Class V, A",
+        "SecClass" : "bg-danger-transparent br-5 p-2 fw-semibold mb-3 text-center",
+        "Title" : "Enhance vocabulary and grammar skills",
+        "ProgressClass" : "progress-bar bg-danger",
+        "Style" : "width: 30%"
+
+    },
+    {
+        "Section" : "Class VII, A",
+        "SecClass" : "bg-secondary-transparent br-5 p-2 fw-semibold mb-3 text-center",
+        "Title" : "Atomic structure and periodic table skills",
+        "ProgressClass" : "progress-bar bg-secondary",
+        "Style" : "width: 70%"
+
+    }
+]

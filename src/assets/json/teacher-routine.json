@@ -1,0 +1,195 @@
+{
+    "Monday": [
+      {
+        "room": "104",
+        "class": "III, A",
+        "subject": "Spanish",
+        "time": "09:45 - 10:30 AM"
+      },
+      {
+        "room": "106",
+        "class": "IV, A",
+        "subject": "English",
+        "time": "10:45 - 11:30 AM"
+      },
+      {
+        "room": "107",
+        "class": "V, A",
+        "subject": "English",
+        "time": "11:30 - 12:15 AM"
+      },
+      {
+        "room": "108",
+        "class": "IV, B",
+        "subject": "Spanish",
+        "time": "02:15 - 03:00 AM"
+      },
+      {
+        "room": "109",
+        "class": "I, A",
+        "subject": "Spanish",
+        "time": "03:15 - 04:00 AM"
+      }
+    ],
+    "Tuesday": [
+      {
+        "room": "104",
+        "class": "III, A",
+        "subject": "Spanish",
+        "time": "09:45 - 10:30 AM"
+      },
+      {
+        "room": "106",
+        "class": "IV, A",
+        "subject": "English",
+        "time": "10:45 - 11:30 AM"
+      },
+      {
+        "room": "107",
+        "class": "V, A",
+        "subject": "English",
+        "time": "11:30 - 12:15 AM"
+      },
+      {
+        "room": "108",
+        "class": "IV, B",
+        "subject": "Spanish",
+        "time": "02:15 - 03:00 AM"
+      },
+      {
+        "room": "109",
+        "class": "I, A",
+        "subject": "Spanish",
+        "time": "03:15 - 04:00 AM"
+      }
+    ],
+    "Wednesday": [
+      {
+        "room": "104",
+        "class": "III, A",
+        "subject": "Spanish",
+        "time": "09:45 - 10:30 AM"
+      },
+      {
+        "room": "106",
+        "class": "IV, A",
+        "subject": "English",
+        "time": "10:45 - 11:30 AM"
+      },
+      {
+        "room": "107",
+        "class": "V, A",
+        "subject": "English",
+        "time": "11:30 - 12:15 AM"
+      },
+      {
+        "room": "108",
+        "class": "IV, B",
+        "subject": "Spanish",
+        "time": "02:15 - 03:00 AM"
+      },
+      {
+        "room": "109",
+        "class": "I, A",
+        "subject": "Spanish",
+        "time": "03:15 - 04:00 AM"
+      }
+    ],
+    "Thursday": [
+      {
+        "room": "104",
+        "class": "III, A",
+        "subject": "Spanish",
+        "time": "09:45 - 10:30 AM"
+      },
+      {
+        "room": "106",
+        "class": "IV, A",
+        "subject": "English",
+        "time": "10:45 - 11:30 AM"
+      },
+      {
+        "room": "107",
+        "class": "V, A",
+        "subject": "English",
+        "time": "11:30 - 12:15 AM"
+      },
+      {
+        "room": "108",
+        "class": "IV, B",
+        "subject": "Spanish",
+        "time": "02:15 - 03:00 AM"
+      },
+      {
+        "room": "109",
+        "class": "I, A",
+        "subject": "Spanish",
+        "time": "03:15 - 04:00 AM"
+      }
+    ],
+    "Friday": [
+      {
+        "room": "104",
+        "class": "III, A",
+        "subject": "Spanish",
+        "time": "09:45 - 10:30 AM"
+      },
+      {
+        "room": "106",
+        "class": "IV, A",
+        "subject": "English",
+        "time": "10:45 - 11:30 AM"
+      },
+      {
+        "room": "107",
+        "class": "V, A",
+        "subject": "English",
+        "time": "11:30 - 12:15 AM"
+      },
+      {
+        "room": "108",
+        "class": "IV, B",
+        "subject": "Spanish",
+        "time": "02:15 - 03:00 AM"
+      },
+      {
+        "room": "109",
+        "class": "I, A",
+        "subject": "Spanish",
+        "time": "03:15 - 04:00 AM"
+      }
+    ],
+    "Saturday": [
+      {
+        "room": "104",
+        "class": "III, A",
+        "subject": "Spanish",
+        "time": "09:45 - 10:30 AM"
+      },
+      {
+        "room": "106",
+        "class": "IV, A",
+        "subject": "English",
+        "time": "10:45 - 11:30 AM"
+      },
+      {
+        "room": "107",
+        "class": "V, A",
+        "subject": "English",
+        "time": "11:30 - 12:15 AM"
+      },
+      {
+        "room": "108",
+        "class": "IV, B",
+        "subject": "Spanish",
+        "time": "02:15 - 03:00 AM"
+      },
+      {
+        "room": "109",
+        "class": "I, A",
+        "subject": "Spanish",
+        "time": "03:15 - 04:00 AM"
+      }
+    ]
+  }
+  
