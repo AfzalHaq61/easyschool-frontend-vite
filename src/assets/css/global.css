@@ -1,0 +1,15 @@
+:root {
+    --dp-font-size: 14px;
+    --dp-preview-font-size: 12px;
+    --dp-time-font-size: 12px;
+}
+  
+.dp__input, .dp__calendar, .dp__time-picker {
+    color: #515B73;
+}
+  
+/* Ant Design deep style override */
+.ant-select-single .ant-select-selector .ant-select-selection-item {
+    line-height: normal !important;
+}
+  

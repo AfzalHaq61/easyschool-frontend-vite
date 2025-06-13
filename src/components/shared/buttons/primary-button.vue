@@ -4,7 +4,7 @@
       v-bind="$attrs"
     >
       <i v-if="icon" :class="`${icon} me-2`"></i>
-      <slot>Add</slot>
+      <slot>Primary Button</slot>
     </button>
 </template>
   

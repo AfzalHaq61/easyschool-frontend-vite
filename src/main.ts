@@ -40,8 +40,19 @@ import Breadcrumb_Index from '@/components/breadcrumb/breadcrumb-index.vue';
 import Breadcrumb from '@/components/shared/breadcrumb.vue';
 import Top_Action_Buttons from '@/components/shared/buttons/top-action-buttons.vue';
 import Refresh_Button from '@/components/shared/buttons/refresh-button.vue';
-import Primary_Button from '@/components/shared/buttons/primary-button.vue';
+import Print_Button from '@/components/shared/buttons/print-button.vue';
 import Dropdown_Button from '@/components/shared/buttons/dropdown-button.vue';
+import Primary_Button from '@/components/shared/buttons/primary-button.vue';
+import Secondary_Button from '@/components/shared/buttons/secondary-button.vue';
+import Icon_Button from '@/components/shared/buttons/icon-button.vue';
+import Alert from "@/components/shared/alert.vue";
+import Card from '@/components/shared/table/card.vue';
+import DateRangePicker from '@/components/shared/table/date-range-picker.vue';
+import SortDropdown from '@/components/shared/table/sort-dropdown.vue';
+import SearchFilter from '@/components/shared/table/search-filter.vue';
+import RowsPerPageFilter from '@/components/shared/table/rows-per-page-filter.vue';
+import BaseModal from '@/components/shared/modals/base-modal.vue';
+import DeleteConfirmModal from '@/components/shared/modals/delete-confirm-modal.vue';
 
 /************Page Components********************/
 import ChatContent from "@/views/pages/application/chat/chat-content.vue";
@@ -283,6 +294,7 @@ import '@/assets/css/feather.css';
 import '@/assets/css/sticky.css';
 import '@/assets/css/tabler-icons.css';
 import '@/assets/css/vue-form-wizard.css';
+import '@/assets/css/global.css'
 import '@/assets/scss/main.scss';
 
 defineCustomElements(window)
@@ -309,8 +321,20 @@ app.component('breadcrumb-index', Breadcrumb_Index);
 app.component('breadcrumb', Breadcrumb);
 app.component('top-action-buttons', Top_Action_Buttons);
 app.component('refresh-button', Refresh_Button);
-app.component('primary-button', Primary_Button);
+app.component('print-button', Print_Button);
 app.component('dropdown-button', Dropdown_Button);
+app.component('primary-button', Primary_Button);
+app.component('secondary-button', Secondary_Button);
+app.component('icon-button', Icon_Button);
+app.component('alert', Alert);
+app.component('card', Card);
+app.component('date-range-picker', DateRangePicker);
+app.component('sort-dropdown', SortDropdown);
+app.component('search-filter', SearchFilter);
+app.component('rows-per-page-filter', RowsPerPageFilter);
+app.component('base-modal', BaseModal);
+app.component('delete-confirm-modal', DeleteConfirmModal);
+
 app.component('attendance-report-tabset', Attendance_Report_Tabset);
 
 /************Page Components********************/

@@ -1,6 +1,6 @@
 <template>
   <!-- Add Role -->
-  <BaseModal id="add_role" title="Add Role">
+  <base-modal id="add_role" title="Add Role">
     <template #body>
       <Form
         ref="addRoleFormRef"
@@ -28,11 +28,11 @@
         </div>
       </Form>
     </template>
-  </BaseModal>
+  </base-modal>
   <!-- /Add Role -->
 
   <!-- Edit Role -->
-  <BaseModal id="edit_role" title="Edit Role">
+  <base-modal id="edit_role" title="Edit Role">
     <template #body>
       <Form
         ref="editRoleFormRef"
@@ -62,25 +62,16 @@
         </div>
       </Form>
     </template>
-  </BaseModal>
+  </base-modal>
   <!-- /Edit Role -->
 
   <!-- Delete Modal -->
-  <BaseModal id="delete-modal" title="Confirm Deletion">
-    <template #body>
-      <Form @submit="deleteRole">
-        <div class="text-center">
-          <span class="delete-icon"><i class="ti ti-trash-x"></i></span>
-          <h4>Are you sure?</h4>
-          <p>You want to delete this role. This action cannot be undone.</p>
-          <div class="d-flex justify-content-center">
-            <a class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
-            <button type="submit" class="btn btn-danger">Yes, Delete</button>
-          </div>
-        </div>
-      </Form>
-    </template>
-  </BaseModal>
+  <delete-confirm-modal
+    id="delete-modal"
+    title="Confirm Deletion"
+    message="You want to delete this role. This action cannot be undone."
+    @confirmed="deleteRole"
+  />
   <!-- /Delete Modal -->
 </template>
 
@@ -90,11 +81,9 @@
   import * as Yup from "yup";
   import { ref, watch } from 'vue';
   import { useAuthStore } from '@/stores/auth';
-  import Alert from "@/components/shared/alert.vue";
   import { useRolesAndPermissionsStore } from '@/stores/roles-and-permissions';
   import { useNotificationStore } from '@/stores/notification';
   import { Modal } from 'bootstrap';
-  import BaseModal from '@/components/base/BaseModal.vue';
 
   const props = defineProps({
     role: {
@@ -177,11 +166,6 @@
 
   const deleteRole = async () => {
     const success = await rolesAndPermissionsStore.destroy();
-
-    // Hide modal
-    const modalEl = document.getElementById("delete-modal");
-    const modalInstance = Modal.getInstance(modalEl) || new Modal(modalEl);
-    modalInstance.hide();
 
     if (success) {
       notificationStore.setNotification({ status: 'success', message: 'Role deleted successfully!' });

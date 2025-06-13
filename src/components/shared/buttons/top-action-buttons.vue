@@ -1,23 +1,13 @@
 <template>
-  <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
+  <div class="d-flex my-xl-auto right-content align-items-center">
     <!-- Refresh Button -->
     <div class="pe-1 mb-2">
-      <refresh-button />
+      <icon-button icon="ti ti-refresh" tooltip="Refresh" :reload="true" />
     </div>
 
     <!-- Print Button -->
     <div class="pe-1 mb-2">
-      <button
-        type="button"
-        class="btn btn-outline-light bg-white btn-icon me-1"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        aria-label="Print"
-        data-bs-original-title="Print"
-        @click.prevent="$emit('print')"
-      >
-        <i class="ti ti-printer"></i>
-      </button>
+      <icon-button icon="ti ti-printer" tooltip="Print" @click="$emit('print')" />
     </div>
 
     <!-- Export Dropdown -->
@@ -30,26 +20,33 @@
           { text: 'Export as Excel', value: 'excel', icon: 'ti ti-file-type-xls' }
         ]"
         @action="handleExport"
-      >
-      </dropdown-button>
+      />
     </div>
 
     <!-- Add Role Button -->
     <div class="mb-2">
       <primary-button icon="ti ti-square-rounded-plus" data-bs-toggle="modal" :data-bs-target="`#${id}`">
-        Add Role
+        Add {{ name }}
       </primary-button>
     </div>
   </div>
 </template>
   
 <script setup>
-  defineEmits(['print', 'export', 'addRole'])
+  const emit = defineEmits(['print', 'export', 'addRole'])
   defineProps({
       id: {
           type: String,
           default: null
+      },
+      name: {
+          type: String,
+          default: null
       }
     })
+
+  function handleExport(type) {
+    emit('export', type)
+  }
 </script>
   
