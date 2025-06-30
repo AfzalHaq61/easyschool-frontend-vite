@@ -158,9 +158,11 @@
   import { ref, computed } from 'vue';
   import { useAuthStore } from '@/stores/auth';
   import Alert from "@/components/shared/alert.vue";
+  import { useNotificationStore } from '@/stores/notification';
 
   // State variables
   const authStore = useAuthStore();
+  const notificationStore = useNotificationStore();
   const email = ref('superadmin@gmail.com');
   const password = ref('superadmin');
   const showPassword = ref(false);
@@ -184,15 +186,12 @@
     });
 
   const submitForm = async () => {
-    const login = await authStore.login(email.value, password.value);
-    
-    if (authStore.token && authStore.user) {
-      router.push("/");      
+    const success = await authStore.login(email.value, password.value);
+
+    if (success && authStore.user) {
+      router.push("/");    
     } else {
-      notification.value = {
-        status: authStore.notification.status,
-        message: authStore.notification.message,
-      };
+      notificationStore.setNotification({ status: 'error', message: 'Failed to login.' });
     }
   };
 </script>

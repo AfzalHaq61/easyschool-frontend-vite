@@ -410,8 +410,7 @@ const routes = [
       { path: "user-list", component: User_List },
       { 
         path: "roles-permission", 
-        component: Roles_Permission, 
-        meta: { requiresAuth: true, requiresVerified: true }
+        component: Roles_Permission
       },
       { path: "permission", component: Permission_List },
       { path: "delete-account", component: Delete_Account },
@@ -910,11 +909,10 @@ const routes = [
       { 
         path: 'admin-dashboard', 
         component: Admin_Dashboard ,
-        meta: { requiresAuth: true, requiresVerified: true },
       },
-      { path: 'parent-dashboard', component: Parent_Dashboard, requiresAuth: true },
-      { path: 'student-dashboard', component: Student_Dashboard , requiresAuth: true},
-      { path: 'teacher-dashboard', component: Teacher_Dashboard , requiresAuth: true},
+      { path: 'parent-dashboard', component: Parent_Dashboard},
+      { path: 'student-dashboard', component: Student_Dashboard},
+      { path: 'teacher-dashboard', component: Teacher_Dashboard},
     ],
   },
   {

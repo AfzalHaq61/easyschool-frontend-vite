@@ -7,6 +7,7 @@
       <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
         <breadcrumb :title="title" :text="text" :text1="text1" :text2="text2" />
         <top-action-buttons
+          name="Role"
           id="add_role"
           @print="() => exportData('print')"
           @export="exportData"
@@ -81,11 +82,8 @@
 <script setup>
   import { ref, onMounted, computed, watch } from 'vue';
   import moment from "moment";
-  import { Form } from "vee-validate";
   import { useRolesAndPermissionsStore } from '@/stores/roles-and-permissions';
-  import alert from "@/components/shared/alert.vue";
   import { useNotificationStore } from "@/stores/notification";
-  import card from '@/components/shared/table/card.vue'
 
   const rolesAndPermissionsStore = useRolesAndPermissionsStore();
   const notificationStore = useNotificationStore();
@@ -175,6 +173,7 @@
   }
 
   const exportData = async (type) => {
+    console.log('Exporting:', type)
     rolesAndPermissionsStore.exportType = type;
     await rolesAndPermissionsStore.export()
   }
@@ -218,21 +217,4 @@
     CreatedOn: moment(role.attributes.created_at).format("DD MMM YYYY")
   })));
 </script>
-
-<style>
-  :root {
-    --dp-font-size: 14px;
-    --dp-preview-font-size: 12px;
-    --dp-time-font-size: 12px;
-    .dp__input, .dp__calendar, .dp__time-picker {
-        color: #515B73;
-      }
-  }
-</style>
-
-<style scoped>
-  ::v-deep(.ant-select-single .ant-select-selector .ant-select-selection-item) {
-    line-height: normal !important;
-  }
-</style>
 

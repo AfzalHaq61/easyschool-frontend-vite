@@ -13,9 +13,9 @@
         Entries
       </label>
     </div>
-  </template>
+</template>
   
-  <script setup>
+<script setup>
   import { computed } from 'vue'
   
   const props = defineProps({
@@ -35,5 +35,5 @@
     get: () => props.modelValue,
     set: (val) => emit('update:modelValue', val)
   })
-  </script>
+</script>
   

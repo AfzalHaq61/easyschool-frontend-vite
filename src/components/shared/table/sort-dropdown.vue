@@ -1,24 +1,24 @@
 <template>
-    <div class="dropdown mb-3">
-      <a class="btn btn-outline-light bg-white dropdown-toggle" data-bs-toggle="dropdown">
-        <i class="ti ti-sort-ascending-2 me-2"></i>
-        Sort by {{ currentLabel }}
-      </a>
-      <ul class="dropdown-menu p-3">
-        <li>
-          <a @click="handleSort('asc')" class="dropdown-item rounded-1">Ascending</a>
-        </li>
-        <li>
-          <a @click="handleSort('desc')" class="dropdown-item rounded-1">Descending</a>
-        </li>
-        <li>
-          <a @click="handleSort('recent_added')" class="dropdown-item rounded-1">Recently Added</a>
-        </li>
-      </ul>
-    </div>
-  </template>
+  <div class="dropdown mb-3">
+    <a class="btn btn-outline-light bg-white dropdown-toggle" data-bs-toggle="dropdown">
+      <i class="ti ti-sort-ascending-2 me-2"></i>
+      Sort by {{ currentLabel }}
+    </a>
+    <ul class="dropdown-menu p-3">
+      <li>
+        <a @click="handleSort('asc')" class="dropdown-item rounded-1">Ascending</a>
+      </li>
+      <li>
+        <a @click="handleSort('desc')" class="dropdown-item rounded-1">Descending</a>
+      </li>
+      <li>
+        <a @click="handleSort('recent_added')" class="dropdown-item rounded-1">Recently Added</a>
+      </li>
+    </ul>
+  </div>
+</template>
   
-  <script setup>
+<script setup>
   import { computed } from 'vue'
   
   const props = defineProps({
@@ -46,5 +46,5 @@
         return 'None'
     }
   })
-  </script>
+</script>
   
