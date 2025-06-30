@@ -2,11 +2,9 @@ import { defineStore } from 'pinia';
 import axios from 'axios';
 
 // Set the global base URL
-axios.defaults.baseURL = 'https://easyschool.ddev.site';
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
 axios.defaults.withCredentials = true; // If you're using cookies like Laravel Sanctum
-
-// Optionally, set headers globally
-axios.defaults.headers.common['Content-Type'] = 'application/json';
+axios.defaults.headers.common['Content-Type'] = 'application/json'; // Optionally, set headers globally
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
@@ -23,37 +21,21 @@ export const useAuthStore = defineStore('auth', {
     async login(email, password) {
       try {
         // Get CSRF cookie
-        await axios.get('/sanctum/csrf-cookie');
+        await axios.get('/sanctum/csrf-cookie', { withCredentials: true });
 
         // Send login request
         const response = await axios.post('/api/login', {
           email,
           password,
-        });
+        }, { withCredentials: true });
 
         if (response?.status === 200) {
           this.user = response.data?.data?.user;
-          this.token = response.data?.data?.token; // Assuming you get a token
-
-          // Store token and email verification in localStorage (optional)
-          localStorage.setItem('authToken', this.token);
-          if (this.user && this.user.email_verified_at) {
-            localStorage.setItem('emailVerification', 'true');
-          } else {
-            localStorage.setItem('emailVerification', 'false');
-          }
+          return true;
         }
+
       } catch (error) {
-        let errorMessage = 'An error occurred. Please try again.';
-
-        if (error.response.data.message) {
-          errorMessage = error.response.data.message;
-        }
-
-        this.notification = {
-          status: 'error',
-          message: errorMessage,
-        };
+        return false;
       }
     },
 

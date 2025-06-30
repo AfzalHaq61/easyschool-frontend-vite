@@ -82,7 +82,6 @@
 <script setup>
   import { ref, onMounted, computed, watch } from 'vue';
   import moment from "moment";
-  import { Form } from "vee-validate";
   import { useRolesAndPermissionsStore } from '@/stores/roles-and-permissions';
   import { useNotificationStore } from "@/stores/notification";
 

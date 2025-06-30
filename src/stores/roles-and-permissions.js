@@ -31,6 +31,10 @@ export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', 
      * ------------------------------------------------------------------- */
     async index() {
       try {
+
+        const authCheck = await axios.get('/api/user', { withCredentials: true });
+        console.log('✅ Authenticated as:', authCheck.data);
+
         const params = {
           date_start: this.dateStart,
           date_end: this.dateEnd,
@@ -40,7 +44,7 @@ export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', 
           search: this.search?.trim() || null
         }
 
-        const response = await axios.get('/api/roles', { params })
+        const response = await axios.get('/api/roles', { params }, { withCredentials: true })
 
         if (response?.status === 200) {
           this.roles = response.data.data || [];

@@ -52,6 +52,7 @@ import SortDropdown from '@/components/shared/table/sort-dropdown.vue';
 import SearchFilter from '@/components/shared/table/search-filter.vue';
 import RowsPerPageFilter from '@/components/shared/table/rows-per-page-filter.vue';
 import BaseModal from '@/components/shared/modals/base-modal.vue';
+import AddAndEditModal from '@/components/shared/modals/add-and-edit-modal.vue';
 import DeleteConfirmModal from '@/components/shared/modals/delete-confirm-modal.vue';
 
 /************Page Components********************/
@@ -333,6 +334,7 @@ app.component('sort-dropdown', SortDropdown);
 app.component('search-filter', SearchFilter);
 app.component('rows-per-page-filter', RowsPerPageFilter);
 app.component('base-modal', BaseModal);
+app.component('add-and-edit-modal', AddAndEditModal);
 app.component('delete-confirm-modal', DeleteConfirmModal);
 
 app.component('attendance-report-tabset', Attendance_Report_Tabset);
