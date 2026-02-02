@@ -1,17 +1,9 @@
 <template>
   <div class="col-md-8 mx-auto p-4">
-    <Form
-      @submit="submitForm"
-      :validation-schema="schema"
-      v-slot="{ errors }"
-    >
+    <Form @submit="submitForm" :validation-schema="schema" v-slot="{ errors }">
       <div>
         <div class="mx-auto mb-5 text-center">
-          <img
-            src="@/assets/img/authentication/authentication-logo.svg"
-            class="img-fluid"
-            alt="Logo"
-          />
+          <img src="@/assets/img/authentication/authentication-logo.svg" class="img-fluid" alt="Logo" />
         </div>
         <div class="card">
           <div class="card-body">
@@ -24,7 +16,9 @@
             </div>
 
             <!-- Using the alert component -->
-            <Alert v-if="notification" :type="notification.status === 'error' ? 'danger' : notification.status" :icon="notification.status === 'error' ? 'alert-octagon' : 'check-circle'" :message="notification.message" @update:message="notification.message = $event" />
+            <Alert v-if="notification" :type="notification.status === 'error' ? 'danger' : notification.status"
+              :icon="notification.status === 'error' ? 'alert-octagon' : 'check-circle'" :message="notification.message"
+              @update:message="notification.message = $event" />
 
             <div class="mb-3">
               <label class="form-label">Email Address</label>
@@ -32,13 +26,8 @@
                 <span class="input-icon-addon">
                   <i class="ti ti-mail"></i>
                 </span>
-                <Field
-                  name="email"
-                  type="text"
-                  v-model="email"
-                  class="form-control"
-                  :class="{ 'is-invalid': errors.email }"
-                />
+                <Field name="email" type="text" v-model="email" class="form-control"
+                  :class="{ 'is-invalid': errors.email }" />
                 <div class="invalid-feedback">
                   {{ errors.email }}
                 </div>
@@ -66,32 +55,37 @@
 </template>
 
 <script setup>
-  import { Form, Field} from "vee-validate";
-  import * as Yup from "yup";
-  import { ref } from 'vue';
-  import { useAuthStore } from '@/stores/auth';
-  import Alert from "@/components/shared/alert.vue";
+import { Form, Field } from "vee-validate";
+import * as Yup from "yup";
+import { ref } from 'vue';
+import { useAuthStore } from '@/stores/auth';
+import Alert from "@/components/shared/alert.vue";
 
-  // State variables
-  const authStore = useAuthStore();
-  const email = ref('superadmin@gmail.com');
-  const notification = ref([]);
+// State variables
+const authStore = useAuthStore();
+const email = ref('superadmin@gmail.com');
+const notification = ref([]);
 
-  const schema = Yup.object().shape({
-    email: Yup.string()
-      .required("Email is required")
-      .email("Email is invalid")
-  });
+const schema = Yup.object().shape({
+  email: Yup.string()
+    .required("Email is required")
+    .email("Email is invalid")
+});
 
-  const submitForm = async () => {
+const submitForm = async () => {
+  notification.value = null;
+  const result = await authStore.forgotPassword(email.value);
 
-    await authStore.forgotPassword(email.value);
-
-    if (authStore.notification) {
-      notification.value = {
-        status: authStore.notification.status,
-        message: authStore.notification.message,
-      };
-    }
+  if (result.success) {
+    notification.value = {
+      status: 'success',
+      message: result.message,
+    };
+  } else {
+    notification.value = {
+      status: 'error',
+      message: result.message,
+    };
   }
+}
 </script>

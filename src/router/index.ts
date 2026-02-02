@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import login from '@/views/pages/pages/auth/login.vue'
 import Forgot_Password from '@/views/pages/pages/auth/forgot-password.vue'
@@ -290,7 +290,7 @@ const routes = [
     path: '/login',
     name: 'login',
     component: login,
-    meta: { layout: "GuestLayout"}, // Assign GuestLayout
+    meta: { layout: "GuestLayout" }, // Assign GuestLayout
   },
   {
     path: '/forgot-password',
@@ -405,11 +405,12 @@ const routes = [
   {
     path: '/user',
     component: User_Management,
+    meta: { requiresAuth: true },
     children: [
       { path: '', redirect: '/user/user-list' },
       { path: "user-list", component: User_List },
-      { 
-        path: "roles-permission", 
+      {
+        path: "roles-permission",
         component: Roles_Permission
       },
       { path: "permission", component: Permission_List },
@@ -440,10 +441,10 @@ const routes = [
     component: Support_Index,
     children: [
       { path: '', redirect: '/support/contact-messages' },
-      { path: "contact-messages", component: Contact_Messages  },
-      { path: "ticket-list", component: Ticket_List  },
-      { path: "ticket-grid", component: Ticket_Grid  },
-      { path: "ticket-details", component: Ticket_Details  },
+      { path: "contact-messages", component: Contact_Messages },
+      { path: "ticket-list", component: Ticket_List },
+      { path: "ticket-grid", component: Ticket_Grid },
+      { path: "ticket-details", component: Ticket_Details },
     ]
   },
   {
@@ -552,7 +553,7 @@ const routes = [
       { path: "add-invoice", component: Add_Invoice },
       { path: "edit-invoice", component: Edit_Invoice },
       { path: "accounts-transactions", component: Accounts_Transactions },
-      
+
     ]
   },
   {
@@ -571,7 +572,7 @@ const routes = [
       { path: "designation-list", component: Designation_List },
       { path: "holiday-list", component: Holiday_List },
       { path: "payroll-list", component: Payroll_List },
-      
+
     ]
   },
   {
@@ -582,7 +583,7 @@ const routes = [
       { path: "student-attendance", component: Student_Attendance },
       { path: "teacher-attendance", component: Teacher_Attendance },
       { path: "staff-attendance", component: Staff_Attendance },
-      
+
     ]
   },
   {
@@ -592,7 +593,7 @@ const routes = [
       { path: '', redirect: '/leaves/list-leaves' },
       { path: "list-leaves", component: List_Leaves },
       { path: "approve-request", component: Approve_Request },
-      
+
     ]
   },
   {
@@ -605,7 +606,7 @@ const routes = [
       { path: "fees-master", component: Fees_Master },
       { path: "fees-assign", component: Fees_Assign },
       { path: "collect-fees", component: Collect_Fees },
-      
+
     ]
   },
   {
@@ -617,7 +618,7 @@ const routes = [
       { path: "library-books", component: Library_Books },
       { path: "library-return", component: Library_Return },
       { path: "library-issue-book", component: Library_Issue_Book },
-      
+
     ]
   },
   {
@@ -627,7 +628,7 @@ const routes = [
       { path: '', redirect: '/management/sports-list' },
       { path: "sports-list", component: Sports_List },
       { path: "player-list", component: Player_List },
-      
+
     ]
   },
   {
@@ -640,7 +641,7 @@ const routes = [
       { path: "transport-vehicle-drivers", component: Transport_Vehicle_Drivers },
       { path: "transport-vehicle", component: Transport_Vehicle },
       { path: "transport-assign-vehicle", component: Transport_Assign_Vehicle },
-      
+
     ]
   },
   {
@@ -651,7 +652,7 @@ const routes = [
       { path: "hostel-list", component: Hostel_List },
       { path: "hostel-rooms", component: Hostel_Rooms },
       { path: "hostel-room-type", component: Hostel_Room_Type },
-      
+
     ]
   },
   {
@@ -664,7 +665,7 @@ const routes = [
       { path: "grade-list", component: Grade_List },
       { path: "exam-results", component: Exam_Results },
       { path: "exam-attendance", component: Exam_Attendance },
-      
+
     ]
   },
   {
@@ -683,7 +684,7 @@ const routes = [
       { path: "student-fees", component: Student_Fees },
       { path: "student-library", component: Student_Library },
       { path: "student-promotion", component: Student_Promotion },
-      
+
     ]
   },
   {
@@ -700,7 +701,7 @@ const routes = [
       { path: "teacher-salary", component: Teacher_Salary },
       { path: "teacher-library", component: Teacher_Library },
       { path: "routine-teachers", component: Routine_Teachers },
-      
+
     ]
   },
   {
@@ -734,17 +735,18 @@ const routes = [
       { path: "class-home-work", component: Class_Home_Work },
       { path: "class-time-table", component: Class_Time_Table },
       { path: "academic-reasons", component: Academic_Reasons },
-      
+
     ]
   },
   {
     path: '/classes',
     component: Classes_Index,
+    meta: { requiresAuth: true },
     children: [
       { path: '', redirect: '/classes/classes-list' },
       { path: "classes-list", component: Classes_List },
       { path: "schedule-classes", component: Schedule_Classes },
-      
+
     ]
   },
   {
@@ -806,20 +808,20 @@ const routes = [
       { path: "ui-dropdowns", component: UI_Dropdowns },
       { path: "ui-grid", component: UI_Grid },
       { path: "ui-images", component: UI_Images },
-      { path: "ui-lightbox", component: UI_Lightbox},
-      { path: "ui-media", component: UI_Media},
-      { path: "ui-modals", component: UI_Modals},
-      { path: "ui-offcanvas", component: UI_Offcanvas},
-      { path: "ui-pagination", component: UI_Pagination},
-      { path: "ui-popovers", component: UI_Popovers},
-      { path: "ui-progress", component: UI_Progress},
-      { path: "ui-placeholders", component: UI_Placeholders},
-      { path: "ui-nav-tabs", component: Ui_Navtabs},
-      { path: "ui-spinner", component: UI_Spinner},
-      { path: "ui-sweetalerts", component: UI_Sweetalerts},
-      { path: "ui-tooltips", component: UI_Tooltips},
-      { path: "ui-typography", component: UI_Typography},
-      { path: "ui-video", component: UI_Video},
+      { path: "ui-lightbox", component: UI_Lightbox },
+      { path: "ui-media", component: UI_Media },
+      { path: "ui-modals", component: UI_Modals },
+      { path: "ui-offcanvas", component: UI_Offcanvas },
+      { path: "ui-pagination", component: UI_Pagination },
+      { path: "ui-popovers", component: UI_Popovers },
+      { path: "ui-progress", component: UI_Progress },
+      { path: "ui-placeholders", component: UI_Placeholders },
+      { path: "ui-nav-tabs", component: Ui_Navtabs },
+      { path: "ui-spinner", component: UI_Spinner },
+      { path: "ui-sweetalerts", component: UI_Sweetalerts },
+      { path: "ui-tooltips", component: UI_Tooltips },
+      { path: "ui-typography", component: UI_Typography },
+      { path: "ui-video", component: UI_Video },
     ]
   },
   {
@@ -835,7 +837,7 @@ const routes = [
       { path: "ui-scrollbar", component: UI_Scrollbar },
       { path: "ui-rating", component: UI_Rating },
       { path: "ui-stickynote", component: UI_Stickynote },
-      { path: "ui-rangeslider", component: UI_Rangeslider},
+      { path: "ui-rangeslider", component: UI_Rangeslider },
       { path: "ui-timeline", component: UI_Timeline }
     ]
   },
@@ -904,15 +906,16 @@ const routes = [
   {
     path: '/dashboard',
     component: Dashboard,
+    meta: { requiresAuth: true },
     children: [
-      { path: '', redirect: '/dashboard/admin-dashboard'},
-      { 
-        path: 'admin-dashboard', 
-        component: Admin_Dashboard ,
+      { path: '', redirect: '/dashboard/admin-dashboard' },
+      {
+        path: 'admin-dashboard',
+        component: Admin_Dashboard,
       },
-      { path: 'parent-dashboard', component: Parent_Dashboard},
-      { path: 'student-dashboard', component: Student_Dashboard},
-      { path: 'teacher-dashboard', component: Teacher_Dashboard},
+      { path: 'parent-dashboard', component: Parent_Dashboard },
+      { path: 'student-dashboard', component: Student_Dashboard },
+      { path: 'teacher-dashboard', component: Teacher_Dashboard },
     ],
   },
   {
@@ -922,10 +925,10 @@ const routes = [
 ];
 
 export const router = createRouter({
-    history: createWebHistory('/vue/template/'),
-    linkActiveClass: 'active',
-    routes,
-}); 
+  history: createWebHistory('/'),
+  linkActiveClass: 'active',
+  routes,
+});
 
 
 router.afterEach((to) => {

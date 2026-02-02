@@ -1,12 +1,10 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
 
-// Redundant axios defaults removed as they are handled globally in auth.js
-
-export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', {
+export const useClassesStore = defineStore('classes', {
   state: () => ({
     id: '',
-    roles: [],
+    classes: [],
     exportType: 'pdf',
     dateStart: null,
     dateEnd: null,
@@ -16,15 +14,13 @@ export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', 
     total: 0,
     lastPage: 1,
     search: '',
+    status: null,
+    section_id: null,
   }),
-
-  getters: {
-    isAuthenticated: (state) => !!state.token,
-  },
 
   actions: {
     /* ---------------------------------------------------------------------
-     * FETCH ALL ROLES
+     * FETCH ALL CLASSES
      * ------------------------------------------------------------------- */
     async index() {
       try {
@@ -34,66 +30,74 @@ export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', 
           sort: this.sort,
           per_page: this.perPage,
           page: this.currentPage,
-          search: this.search?.trim() || null
+          search: this.search?.trim() || null,
+          status: this.status,
+          section_id: this.section_id
         }
-
-        const response = await axios.get('/roles', { params })
+        console.log('Fetching classes with params:', params);
+        const response = await axios.get('/classes', { params })
 
         if (response?.status === 200) {
-          this.roles = response.data.data || [];
-          this.currentPage = response.data.meta.current_page;
-          this.perPage = response.data.meta.per_page;
-          this.total = response.data.meta.total;
-          this.lastPage = response.data.meta.last_page;
+          this.classes = response.data.data || [];
+          this.currentPage = response.data.meta?.current_page || 1;
+          this.perPage = response.data.meta?.per_page || 10;
+          this.total = response.data.meta?.total || 0;
+          this.lastPage = response.data.meta?.last_page || 1;
 
           return true;
         }
       } catch (error) {
+        console.error('Error fetching classes:', error.response?.data || error);
         return false;
       }
     },
 
     /* ---------------------------------------------------------------------
-     * CREATE ROLE
+     * CREATE CLASS
      * ------------------------------------------------------------------- */
-    async store(name) {
+    async store(payload) {
       try {
-        const response = await axios.post('/roles', { name });
+        const response = await axios.post('/classes', payload);
         if (response?.status === 201) {
           await this.index();
           return true;
         }
       } catch (error) {
+        console.error('Error creating class:', error.response?.data || error);
         return false;
       }
     },
 
     /* ---------------------------------------------------------------------
-     * UPDATE ROLE
+     * UPDATE CLASS
      * ------------------------------------------------------------------- */
-    async update(roleId, name) {
+    async update(classId, payload) {
+      console.log(payload)
+
       try {
-        const response = await axios.put(`/roles/${roleId}`, { name });
+        const response = await axios.put(`/classes/${classId}`, payload);
         if (response?.status === 200) {
           await this.index();
           return true;
         }
       } catch (error) {
+        console.error('Error updating class:', error.response?.data || error);
         return false;
       }
     },
 
     /* ---------------------------------------------------------------------
-     * DELETE ROLE
+     * DELETE CLASS
      * ------------------------------------------------------------------- */
-    async destroy() {
+    async destroy(classId) {
       try {
-        const response = await axios.delete(`/roles/${this.id}`);
+        const response = await axios.delete(`/classes/${classId || this.id}`);
         if (response?.status === 200) {
-          this.roles = this.roles.filter((role) => role.id !== this.id);
+          this.classes = this.classes.filter((item) => item.id !== (classId || this.id));
           return true;
         }
       } catch (error) {
+        console.error('Error deleting class:', error.response?.data || error);
         return false;
       }
     },
@@ -103,13 +107,15 @@ export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', 
      * ------------------------------------------------------------------- */
     async export() {
       try {
-        const url = `https://easyschool.ddev.site/api/roles/export?type=${this.exportType}`;
-        if(this.exportType == 'print') {
+        const url = `${axios.defaults.baseURL}/classes/export?type=${this.exportType}`;
+        if(this.exportType === 'print') {
           window.open(url, '_blank');
         } else {
           window.location.href = url;
         }
+        return true;
       } catch (error) {
+        console.error('Error exporting classes:', error.response?.data || error);
         return false;
       }
     }

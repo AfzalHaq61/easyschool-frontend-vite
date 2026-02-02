@@ -1,164 +1,70 @@
 <template>
-  <!-- Add Class Section -->
-  <div class="modal fade" id="add_class_section">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Add Section</h4>
-          <button
-            type="button"
-            class="btn-close custom-btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
-            <i class="ti ti-x"></i>
-          </button>
-        </div>
-        <form @submit.prevent="submitForm">
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="mb-3">
-                  <label class="form-label">Section</label>
-                  <input type="text" class="form-control" placeholder="Enter Section" />
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="status-title">
-                    <h5>Status</h5>
-                    <p>Change the Status by toggle</p>
-                  </div>
-                  <div class="form-check form-switch">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      role="switch"
-                      id="switch-sm"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-light me-2"
-              data-bs-dismiss="modal"
-              >Cancel</a
-            >
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
-              Add Section
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- /Add Class Section -->
+  <!-- Add Section -->
+  <section-add-edit-modal id="add_class_section" mode="add" @submitted="storeSection" />
+  <!-- /Add Section -->
 
-  <!-- Edit Class Section -->
-  <div class="modal fade" id="edit_class_section">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Edit Section</h4>
-          <button
-            type="button"
-            class="btn-close custom-btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
-            <i class="ti ti-x"></i>
-          </button>
-        </div>
-        <form @submit.prevent="submitForm">
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="mb-3">
-                  <label class="form-label">Section</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Section"
-                    value="A"
-                  />
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="status-title">
-                    <h5>Status</h5>
-                    <p>Change the Status by toggle</p>
-                  </div>
-                  <div class="form-check form-switch">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      role="switch"
-                      id="switch-sm2"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-light me-2"
-              data-bs-dismiss="modal"
-              >Cancel</a
-            >
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
-              Save Changes
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- /Edit Class Section -->
+  <!-- Edit Section -->
+  <section-add-edit-modal id="edit_class_section" mode="edit" :section-data="sectionData" @submitted="updateSection" />
+  <!-- /Edit Section -->
 
   <!-- Delete Modal -->
-  <div class="modal fade" id="delete-modal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <form @submit.prevent="submitForm">
-          <div class="modal-body text-center">
-            <span class="delete-icon">
-              <i class="ti ti-trash-x"></i>
-            </span>
-            <h4>Confirm Deletion</h4>
-            <p>
-              You want to delete all the marked items, this cant be undone once you
-              delete.
-            </p>
-            <div class="d-flex justify-content-center">
-              <a
-                href="javascript:void(0);"
-                class="btn btn-light me-3"
-                data-bs-dismiss="modal"
-                >Cancel</a
-              >
-              <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">
-                Yes, Delete
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+  <delete-confirm-modal id="delete-modal" title="Confirm Deletion"
+    message="You want to delete this section, this can't be undone once you delete." @confirmed="deleteSection" />
   <!-- /Delete Modal -->
 </template>
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {
-    submitForm() {
-      this.$router.push("/peoples/class-section");
-    },
-  },
+
+<script setup>
+import { useSectionsStore } from "@/stores/sections";
+import { useNotificationStore } from "@/stores/notification";
+
+const props = defineProps({
+  sectionData: {
+    type: Object,
+    default: () => ({})
+  }
+});
+
+const emit = defineEmits(["refresh"]);
+
+const sectionsStore = useSectionsStore();
+const notificationStore = useNotificationStore();
+
+const storeSection = async (data) => {
+  const success = await sectionsStore.store({
+    name: data.name,
+    status: data.status,
+  });
+
+  if (success) {
+    notificationStore.setNotification({ status: "success", message: "Section added successfully!" });
+    emit("refresh");
+  } else {
+    notificationStore.setNotification({ status: "error", message: "Failed to add section." });
+  }
+};
+
+const updateSection = async (data) => {
+  const success = await sectionsStore.update(props.sectionData.id, {
+    name: data.name,
+    status: data.status
+  });
+
+  if (success) {
+    notificationStore.setNotification({ status: "success", message: "Section updated successfully!" });
+    emit("refresh");
+  } else {
+    notificationStore.setNotification({ status: "error", message: "Failed to update section." });
+  }
+};
+
+const deleteSection = async () => {
+  const success = await sectionsStore.destroy();
+
+  if (success) {
+    notificationStore.setNotification({ status: "success", message: "Section deleted successfully!" });
+    emit("refresh");
+  } else {
+    notificationStore.setNotification({ status: "error", message: "Failed to delete section." });
+  }
 };
 </script>
