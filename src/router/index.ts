@@ -133,7 +133,6 @@ import Classes_List from '@/views/pages/academic/classes/classes-list.vue'
 import Schedule_Classes from '@/views/pages/academic/classes/schedule-classes.vue'
 import Academic_Index from '@/views/pages/academic/academic-index.vue'
 import Class_Room from '@/views/pages/academic/class-room.vue'
-import Class_Routine from '@/views/pages/academic/class-routine.vue'
 import Class_Section from '@/views/pages/academic/class-section.vue'
 import Class_Subject from '@/views/pages/academic/class-subject.vue'
 import Class_Syllabus from '@/views/pages/academic/class-syllabus.vue'
@@ -728,7 +727,6 @@ const routes = [
     children: [
       { path: '', redirect: '/academic/class-room' },
       { path: "class-room", component: Class_Room },
-      { path: "class-routine", component: Class_Routine },
       { path: "class-section", component: Class_Section },
       { path: "class-subject", component: Class_Subject },
       { path: "class-syllabus", component: Class_Syllabus },

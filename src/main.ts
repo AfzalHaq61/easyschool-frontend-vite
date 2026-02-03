@@ -120,12 +120,6 @@ import Teacher_Grid_Filter from '@/views/pages/peoples/teachers/teacher-grid-fil
 import Teacher_Details_Tabs from '@/views/pages/peoples/teachers/teacher-details/teacher-details-tabs.vue'
 import Teachers_Sidebar from '@/views/pages/peoples/teachers/teachers-sidebar.vue'
 import Teacher_Monday from '@/views/pages/peoples/teachers/teacher-details/routine-teachers/teacher-monday.vue'
-import Classes_Filter from '@/views/pages/academic/classes/classes-filter.vue'
-import Schedule_Filter from '@/views/pages/academic/classes/schedule-filter.vue'
-import Class_Room_Filter from '@/views/pages/academic/class-room-filter.vue'
-import Class_Routine_Filter from '@/views/pages/academic/class-routine-filter.vue'
-import Class_Section_Filter from '@/views/pages/academic/class-section-filter.vue'
-import Class_Subject_Filter from '@/views/pages/academic/class-subject-filter.vue'
 import Class_Syllabus_Filter from '@/views/pages/academic/class-syllabus-filter.vue'
 import Class_Work_Filter from '@/views/pages/academic/class-work-filter.vue'
 import Exam_Filter from '@/views/pages/academic/examination/exam-filter.vue'
@@ -207,7 +201,6 @@ import Schedule_List_Modal from '@/components/modal/schedule-list-modal.vue'
 import Student_Details_Modal from '@/components/modal/student-details-modal.vue'
 import Teacher_Details_Modal from '@/components/modal/teacher-details-modal.vue'
 import Class_Room_Modal from '@/components/modal/class-room-modal.vue'
-import Class_Routine_Modal from '@/components/modal/class-routine-modal.vue'
 import Class_Section_Modal from '@/components/modal/class-section-modal.vue'
 import Class_Subject_Modal from '@/components/modal/class-subject-modal.vue'
 import Class_Syllabus_Modal from '@/components/modal/class-syllabus-modal.vue'
@@ -406,12 +399,6 @@ app.component('teachers-sidebar', Teachers_Sidebar)
 app.component('teacher-grid-filter', Teacher_Grid_Filter)
 app.component('teacher-details-tabs', Teacher_Details_Tabs)
 app.component('teacher-monday', Teacher_Monday)
-app.component('classes-filter', Classes_Filter)
-app.component('schedule-filter', Schedule_Filter)
-app.component('class-room-filter', Class_Room_Filter)
-app.component('class-routine-filter', Class_Routine_Filter)
-app.component('class-section-filter', Class_Section_Filter)
-app.component('class-subject-filter', Class_Subject_Filter)
 app.component('class-syllabus-filter', Class_Syllabus_Filter)
 app.component('class-work-filter', Class_Work_Filter)
 app.component('exam-filter', Exam_Filter)
@@ -492,7 +479,6 @@ app.component('schedule-list-modal', Schedule_List_Modal)
 app.component('student-details-modal', Student_Details_Modal)
 app.component('teacher-details-modal', Teacher_Details_Modal)
 app.component('class-room-modal', Class_Room_Modal)
-app.component('class-routine-modal', Class_Routine_Modal)
 app.component('class-section-modal', Class_Section_Modal)
 app.component('class-subject-modal', Class_Subject_Modal)
 app.component('class-syllabus-modal', Class_Syllabus_Modal)

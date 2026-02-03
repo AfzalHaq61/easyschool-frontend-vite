@@ -44,11 +44,12 @@
             pageSize: classesStore.perPage,
             total: classesStore.total,
             showSizeChanger: true,
+            pageSizeOptions: ['10', '20', '25', '50', '100'],
             showQuickJumper: true
           }" @change="handleTableChange">
           <template #bodyCell="{ column, record }">
             <template v-if="column.key === 'ID'">
-              <div>{{ record.class_id }}</div>
+              <div href="javascript:void(0);" class="link-primary">{{ record.class_id }}</div>
             </template>
             <template v-if="column.key === 'status'">
               <span :class="record.statusClass" class="d-inline-flex align-items-center"><i

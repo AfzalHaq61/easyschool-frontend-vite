@@ -35,7 +35,6 @@ export const useSubjectsStore = defineStore('subjects', {
           status: this.status,
           type: this.type
         }
-        console.log('Fetching subjects with params:', params);
         const response = await axios.get('/subjects', { params })
 
         if (response?.status === 200) {

@@ -170,7 +170,7 @@
           {
             "menuValue": "All Students",
             "route": "/students/student-grid",
-            "active_link": "/students/student-grid",            
+            "active_link": "/students/student-grid",
             "active_link1": "/students/add-student",
             "active_link2": "/students/edit-student",
             "hasSubRoute": false,
@@ -334,15 +334,6 @@
         "showSubRoute": false,
         "route": "/academic/class-room",
         "active_link": "/academic/class-room",
-        "subRoutes": []
-      },
-      {
-        "menuValue": "Class Routine",
-        "icon": "ti-bell-school",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "route": "/academic/class-routine",
-        "active_link": "/academic/class-routine",
         "subRoutes": []
       },
       {
@@ -1826,7 +1817,7 @@
       {
         "menuValue": "Forms",
         "icon": "ti-input-search",
-        "active_link": "forms",        
+        "active_link": "forms",
         "hasSubRouteTwo": true,
         "showSubRoute": false,
         "subMenus": [
@@ -1949,7 +1940,6 @@
             "showSubRoute": false,
             "customSubmenuTwo": false
           }
-
         ]
       },
       {
