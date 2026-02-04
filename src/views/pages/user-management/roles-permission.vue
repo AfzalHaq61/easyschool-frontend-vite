@@ -34,17 +34,29 @@
             </template>
             <template v-if="column.key === 'action'">
               <div class="d-flex align-items-center">
-                <a href="javascript:void(0);"
-                  class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle p-0 me-2"
-                  data-bs-toggle="modal" data-bs-target="#edit_role" @click="selectedRole = { ...record }"><i
-                    class="ti ti-edit-circle text-primary"></i></a>
-                <router-link to="/user/permission"
-                  class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle p-0 me-2"><i
-                    class="ti ti-shield text-skyblue"></i></router-link>
-                <a href="javascript:void(0);"
-                  class="btn btn-outline-light bg-white btn-icon d-flex align-items-center justify-content-center rounded-circle p-0 me-3"
-                  @click="handleDelete(record.id)" data-bs-toggle="modal" data-bs-target="#delete-modal"><i
-                    class="ti ti-trash-x text-danger"></i></a>
+                <div class="dropdown">
+                  <a href="javascript:void(0);"
+                    class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="ti ti-dots-vertical fs-14"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-right p-3">
+                    <li>
+                      <a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal"
+                        data-bs-target="#edit_role" @click="selectedRole = { ...record }"><i
+                          class="ti ti-edit-circle me-2"></i>Edit</a>
+                    </li>
+                    <li>
+                      <router-link to="/user/permission" class="dropdown-item rounded-1"><i
+                          class="ti ti-shield me-2"></i>Permission</router-link>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded-1" href="javascript:void(0);" @click="handleDelete(record.id)"
+                        data-bs-toggle="modal" data-bs-target="#delete-modal"><i
+                          class="ti ti-trash-x me-2"></i>Delete</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </template>
           </template>

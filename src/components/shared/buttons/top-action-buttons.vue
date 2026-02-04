@@ -19,7 +19,7 @@
     </div>
 
     <!-- Add Button -->
-    <div class="mb-2">
+    <div class="mb-2" v-if="showAdd">
       <primary-button icon="ti ti-square-rounded-plus" data-bs-toggle="modal" :data-bs-target="`#${id}`"
         @click="$emit('add')">
         Add {{ name }}
@@ -38,6 +38,10 @@ defineProps({
   name: {
     type: String,
     default: null
+  },
+  showAdd: {
+    type: Boolean,
+    default: true
   }
 })
 
