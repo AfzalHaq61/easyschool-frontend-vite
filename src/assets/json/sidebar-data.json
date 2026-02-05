@@ -101,58 +101,6 @@
     ]
   },
   {
-    "title": "Layout",
-    "hasSubRoute": true,
-    "showSubRoute": false,
-    "menu": [
-      {
-        "menuValue": "Default",
-        "icon": "ti ti-layout-sidebar",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "route": "/layout-default",
-        "active_link": "/layout-default",
-        "subRoutes": []
-      },
-      {
-        "menuValue": "Mini",
-        "icon": "ti ti-layout-align-left",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "route": "/layout-mini",
-        "active_link": "/layout-mini",
-        "subRoutes": []
-      },
-      {
-        "menuValue": "RTL",
-        "icon": "ti ti-text-direction-rtl",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "route": "/layout-rtl",
-        "active_link": "/layout-rtl",
-        "subRoutes": []
-      },
-      {
-        "menuValue": "Box",
-        "icon": "ti ti-layout-distribute-vertical",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "route": "/layout-box",
-        "active_link": "/layout-box",
-        "subRoutes": []
-      },
-      {
-        "menuValue": "Dark",
-        "icon": "ti ti-moon",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "route": "/layout-dark",
-        "active_link": "/layout-dark",
-        "subRoutes": []
-      }
-    ]
-  },
-  {
     "title": "PEOPLES",
     "hasSubRoute": true,
     "showSubRoute": false,
@@ -597,9 +545,9 @@
             "showSubRoute": false
           },
           {
-            "menuValue": "Vehicle Drivers",
-            "route": "/transport/transport-vehicle-drivers",
-            "active_link": "/transport/transport-vehicle-drivers",
+            "menuValue": "Drivers",
+            "route": "/transport/drivers",
+            "active_link": "/transport/drivers",
             "hasSubRoute": false,
             "showSubRoute": false
           },

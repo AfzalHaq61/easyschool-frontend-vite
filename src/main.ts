@@ -140,9 +140,7 @@ import Player_Filter from '@/views/pages/management/player-filter.vue'
 import Hostel_Filter from '@/views/pages/management/hostel/hostel-filter.vue'
 import Hostel_Rooms_Filter from '@/views/pages/management/hostel/hostel-rooms-filter.vue'
 import Hostel_Room_Type_Filter from '@/views/pages/management/hostel/hostel-room-type-filter.vue'
-import Transport_Routes_Filter from '@/views/pages/management/transport/transport-routes-filter.vue'
 import Pickup_Filter from '@/views/pages/management/transport/pickup-filter.vue'
-import Vehicle_Drivers_Filter from '@/views/pages/management/transport/vehicle-drivers-filter.vue'
 import Vehicle_Filter from '@/views/pages/management/transport/vehicle-filter.vue'
 import Assign_Vehicle_Filter from '@/views/pages/management/transport/assign-vehicle-filter.vue'
 import Collect_Filter from '@/views/pages/management/fees-collection/collect-filter.vue'
@@ -219,9 +217,9 @@ import Sports_Modal from '@/components/modal/sports-modal.vue'
 import Hostel_List_Modal from '@/components/modal/hostel-list-modal.vue'
 import Hostel_Room_Modal from '@/components/modal/hostel-room-modal.vue'
 import Hostel_Room_Type_Modal from '@/components/modal/hostel-room-type-modal.vue'
-import Transport_Routes_Modal from '@/components/modal/transport-routes-modal.vue'
+import Route_Modal from '@/components/modal/route-modal.vue'
 import Pickup_Modal from '@/components/modal/pickup-modal.vue'
-import Vehicle_Drivers_Modal from '@/components/modal/vehicle-drivers-modal.vue'
+import Driver_Modal from '@/components/modal/driver-modal.vue'
 import Vehicle_Modal from '@/components/modal/vehicle-modal.vue'
 import Assign_Vehicle_Modal from '@/components/modal/assign-vehicle-modal.vue'
 import Connected_Modal from '@/components/modal/connected-modal.vue'
@@ -419,9 +417,7 @@ app.component('player-filter', Player_Filter)
 app.component('hostel-filter', Hostel_Filter)
 app.component('hostel-rooms-filter', Hostel_Rooms_Filter)
 app.component('hostel-room-type-filter', Hostel_Room_Type_Filter)
-app.component('transport-routes-filter', Transport_Routes_Filter)
 app.component('pickup-filter', Pickup_Filter)
-app.component('vehicle-drivers-filter', Vehicle_Drivers_Filter)
 app.component('vehicle-filter', Vehicle_Filter)
 app.component('assign-vehicle-filter', Assign_Vehicle_Filter)
 app.component('staff-filter', Staff_Filter)
@@ -497,9 +493,9 @@ app.component('sports-modal', Sports_Modal)
 app.component('hostel-list-modal', Hostel_List_Modal)
 app.component('hostel-room-modal', Hostel_Room_Modal)
 app.component('hostel-room-type-modal', Hostel_Room_Type_Modal)
-app.component('transport-routes-modal', Transport_Routes_Modal)
+app.component('route-modal', Route_Modal)
 app.component('pickup-modal', Pickup_Modal)
-app.component('vehicle-drivers-modal', Vehicle_Drivers_Modal)
+app.component('driver-modal', Driver_Modal)
 app.component('vehicle-modal', Vehicle_Modal)
 app.component('assign-vehicle-modal', Assign_Vehicle_Modal)
 app.component('connected-modal', Connected_Modal)

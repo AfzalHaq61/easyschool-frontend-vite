@@ -164,9 +164,9 @@ import Hostel_List from '@/views/pages/management/hostel/hostel-list.vue'
 import Hostel_Rooms from '@/views/pages/management/hostel/hostel-rooms.vue'
 import Hostel_Room_Type from '@/views/pages/management/hostel/hostel-room-type.vue'
 import Transport_Index from '@/views/pages/management/transport/transport-index.vue'
-import Transport_Routes from '@/views/pages/management/transport/transport-routes.vue'
+import Transport_Routes from '@/views/pages/management/transport/routes.vue'
 import Transport_Pickup_Points from '@/views/pages/management/transport/transport-pickup-points.vue'
-import Transport_Vehicle_Drivers from '@/views/pages/management/transport/transport-vehicle-drivers.vue'
+import Drivers from '@/views/pages/management/transport/drivers.vue'
 import Transport_Vehicle from '@/views/pages/management/transport/transport-vehicle.vue'
 import Transport_Assign_Vehicle from '@/views/pages/management/transport/transport-assign-vehicle.vue'
 import Settings_Index from '@/views/pages/settings/general-settings/settings-index.vue'
@@ -637,7 +637,7 @@ const routes = [
       { path: '', redirect: '/transport/transport-routes' },
       { path: "transport-routes", component: Transport_Routes },
       { path: "transport-pickup-points", component: Transport_Pickup_Points },
-      { path: "transport-vehicle-drivers", component: Transport_Vehicle_Drivers },
+      { path: "drivers", component: Drivers },
       { path: "transport-vehicle", component: Transport_Vehicle },
       { path: "transport-assign-vehicle", component: Transport_Assign_Vehicle },
 

@@ -6,16 +6,12 @@
       </h6>
       <ul>
         <template v-for="menu in item.menu" :key="menu.menuValue">
-          <li
-            v-if="!menu.hasSubRoute"
-            :class="{ active: isMenuActive(menu) }"
-            :style="{
-              display:
-                menu.menuValue === 'Authentication' || menu.menuValue === 'Forms'
-                  ? 'none'
-                  : 'block',
-            }"
-          >
+          <li v-if="!menu.hasSubRoute" :class="{ active: isMenuActive(menu) }" :style="{
+            display:
+              menu.menuValue === 'Authentication' || menu.menuValue === 'Forms'
+                ? 'none'
+                : 'block',
+          }">
             <router-link v-if="menu.route" :to="menu.route" @click="expandSubMenus(menu)">
               <i :class="'ti ' + menu.icon"></i>
               <span>{{ menu.menuValue }}</span>
@@ -26,56 +22,39 @@
             </template>
           </li>
           <li v-else class="submenu">
-            <a
-              href="javascript:void(0)"
-              @click="expandSubMenus(menu)"
-              :class="{
-                subdrop: menu.showSubRoute,
-                active: route_array[1] === menu.active_link,
-              }"
-            >
+            <a href="javascript:void(0)" @click="expandSubMenus(menu)" :class="{
+              subdrop: menu.showSubRoute,
+              active: route_array[1] === menu.active_link,
+            }">
               <i :class="'ti ' + menu.icon"></i>
               <span>{{ menu.menuValue }}</span>
               <span class="menu-arrow"></span>
             </a>
             <ul :class="{ 'd-block': menu.showSubRoute, 'd-none': !menu.showSubRoute }">
               <li v-for="subMenu in menu.subMenus" :key="subMenu.menuValue">
-                <router-link
-                  v-if="subMenu.route"
-                  :to="subMenu.route"
-                  :class="{
-                    active:
-                      currentPath === subMenu.active_link ||
-                      currentPath === subMenu.active_link1 ||
-                      currentPath === subMenu.active_link2 ||
-                      currentPath === subMenu.active_link3 ||
-                      currentPath === subMenu.active_link4 ||
-                      currentPath === subMenu.active_link5 ||
-                      currentPath === subMenu.active_link6,
-                  }"
-                >
+                <router-link v-if="subMenu.route" :to="subMenu.route" :class="{
+                  active:
+                    currentPath === subMenu.active_link ||
+                    currentPath === subMenu.active_link1 ||
+                    currentPath === subMenu.active_link2 ||
+                    currentPath === subMenu.active_link3 ||
+                    currentPath === subMenu.active_link4 ||
+                    currentPath === subMenu.active_link5 ||
+                    currentPath === subMenu.active_link6,
+                }">
                   {{ subMenu.menuValue }}
                 </router-link>
                 <template v-else>
                   <span>{{ subMenu.menuValue }}</span>
                   <!-- Handle non-link submenu item display -->
                 </template>
-                <ul
-                  v-if="subMenu.subMenusTwo"
-                  :class="{
-                    'd-block': subMenu.showSubRoute,
-                    'd-none': !subMenu.showSubRoute,
-                  }"
-                >
-                  <li
-                    v-for="subSubMenu in subMenu.subMenusTwo"
-                    :key="subSubMenu.menuValue"
-                  >
-                    <router-link
-                      v-if="subSubMenu.route"
-                      :to="subSubMenu.route"
-                      :class="{ active: currentPath === subSubMenu.active_link }"
-                    >
+                <ul v-if="subMenu.subMenusTwo" :class="{
+                  'd-block': subMenu.showSubRoute,
+                  'd-none': !subMenu.showSubRoute,
+                }">
+                  <li v-for="subSubMenu in subMenu.subMenusTwo" :key="subSubMenu.menuValue">
+                    <router-link v-if="subSubMenu.route" :to="subSubMenu.route"
+                      :class="{ active: currentPath === subSubMenu.active_link }">
                       {{ subSubMenu.menuValue }}
                     </router-link>
                     <template v-else>
@@ -88,27 +67,21 @@
             </ul>
           </li>
           <li v-if="menu.hasSubRouteTwo" class="submenu">
-            <a
-              href="javascript:void(0);"
-              @click="openMenu(menu)"
-              :class="{
-                subdrop:
-                  menu.menuValue === 'Application' ||
-                  (menu.menuValue === 'Forms' && isMenuActive(menu)),
-                active: isMenuActive(menu),
-              }"
-            >
+            <a href="javascript:void(0);" @click="openMenu(menu)" :class="{
+              subdrop:
+                menu.menuValue === 'Application' ||
+                (menu.menuValue === 'Forms' && isMenuActive(menu)),
+              active: isMenuActive(menu),
+            }">
               <i :class="'ti ' + menu.icon"></i>
               <span>{{ menu.menuValue }}</span>
               <span class="menu-arrow"></span>
             </a>
 
-            <ul
-              :class="{
-                'd-block': openMenuItem === menu,
-                'd-none': openMenuItem !== menu,
-              }"
-            >
+            <ul :class="{
+              'd-block': openMenuItem === menu,
+              'd-none': openMenuItem !== menu,
+            }">
               <template v-for="subMenus in menu.subMenus" :key="subMenus.menuValue">
                 <li v-if="!subMenus.customSubmenuTwo">
                   <router-link :to="subMenus.route" @click="expandSubMenus(subMenus)">{{
@@ -117,27 +90,18 @@
                 </li>
                 <template v-else-if="subMenus.customSubmenuTwo">
                   <li class="submenu">
-                    <a
-                      href="javascript:void(0);"
-                      @click="openSubmenuOne(subMenus)"
-                      :class="{
-                        subdrop: showSubRoute === subMenus,
-                        active: route_array[1] === subMenus.active_link,
-                      }"
-                    >
+                    <a href="javascript:void(0);" @click="openSubmenuOne(subMenus)" :class="{
+                      subdrop: showSubRoute === subMenus,
+                      active: route_array[1] === subMenus.active_link,
+                    }">
                       {{ subMenus.menuValue }}
                       <span class="menu-arrow"></span>
                     </a>
-                    <ul
-                      :class="{
-                        'd-block': showSubRoute === subMenus,
-                        'd-none': showSubRoute !== subMenus,
-                      }"
-                    >
-                      <li
-                        v-for="subMenuTwo in subMenus.subMenusTwo"
-                        :key="subMenuTwo.menuValue"
-                      >
+                    <ul :class="{
+                      'd-block': showSubRoute === subMenus,
+                      'd-none': showSubRoute !== subMenus,
+                    }">
+                      <li v-for="subMenuTwo in subMenus.subMenusTwo" :key="subMenuTwo.menuValue">
                         <router-link :to="subMenuTwo.route">{{
                           subMenuTwo.menuValue
                         }}</router-link>
@@ -208,9 +172,9 @@ export default {
       const openMenuItem = localStorage.getItem("openMenuItem");
       const openSubMenu = localStorage.getItem("openSubMenu");
 
-      if (openSubMenu) {
-        this.side_bar_data = JSON.parse(openSubMenu);
-      }
+      // if (openSubMenu) {
+      //   this.side_bar_data = JSON.parse(openSubMenu);
+      // }
 
       if (openMenuItem) {
         this.openMenuItem = this.side_bar_data.find(
