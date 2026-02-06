@@ -165,12 +165,11 @@ import Hostel_Rooms from '@/views/pages/management/hostel/hostel-rooms.vue'
 import Hostel_Room_Type from '@/views/pages/management/hostel/hostel-room-type.vue'
 import Transport_Index from '@/views/pages/management/transport/transport-index.vue'
 import Transport_Routes from '@/views/pages/management/transport/routes.vue'
-import Transport_Pickup_Points from '@/views/pages/management/transport/transport-pickup-points.vue'
+import Transport_Pickup_Points from '@/views/pages/management/transport/pickup-points.vue'
 import Drivers from '@/views/pages/management/transport/drivers.vue'
-import Transport_Vehicle from '@/views/pages/management/transport/transport-vehicle.vue'
-import Transport_Assign_Vehicle from '@/views/pages/management/transport/transport-assign-vehicle.vue'
+import Transport_Vehicle from '@/views/pages/management/transport/vehicle.vue'
+import Transport_Assign_Vehicle from '@/views/pages/management/transport/assign-vehicle.vue'
 import Settings_Index from '@/views/pages/settings/general-settings/settings-index.vue'
-import Profile_Settings from '@/views/pages/settings/general-settings/profile-settings.vue'
 import Security_Settings from '@/views/pages/settings/general-settings/security-settings.vue'
 import Notifications_Settings from '@/views/pages/settings/general-settings/notifications-settings.vue'
 import Connected_Apps from '@/views/pages/settings/general-settings/connected-apps.vue'
@@ -471,8 +470,7 @@ const routes = [
     path: '/settings',
     component: Settings_Index,
     children: [
-      { path: '', redirect: '/settings/profile-settings' },
-      { path: "profile-settings", component: Profile_Settings },
+      { path: '', redirect: '/settings/security-settings' },
       { path: "security-settings", component: Security_Settings },
       { path: "notifications-settings", component: Notifications_Settings },
       { path: "connected-apps", component: Connected_Apps },
@@ -634,12 +632,12 @@ const routes = [
     path: '/transport',
     component: Transport_Index,
     children: [
-      { path: '', redirect: '/transport/transport-routes' },
-      { path: "transport-routes", component: Transport_Routes },
-      { path: "transport-pickup-points", component: Transport_Pickup_Points },
+      { path: '', redirect: '/transport/routes' },
+      { path: "routes", component: Transport_Routes },
+      { path: "pickup-points", component: Transport_Pickup_Points },
       { path: "drivers", component: Drivers },
-      { path: "transport-vehicle", component: Transport_Vehicle },
-      { path: "transport-assign-vehicle", component: Transport_Assign_Vehicle },
+      { path: "vehicle", component: Transport_Vehicle },
+      { path: "assign-vehicle", component: Transport_Assign_Vehicle },
 
     ]
   },

@@ -21,12 +21,14 @@ export const usePermissionsStore = defineStore('permissions', {
           page: this.currentPage,
           per_page: this.perPage,
           search: this.search?.trim() || null,
-          role_id: this.roleId
+          roles_id: this.roleId,
+          role_id: this.roleId // Support both
         }
         const response = await axios.get('/permissions', { params })
 
         if (response?.status === 200) {
-          this.permissions = response.data.data || [];
+          const rawData = response.data.data || response.data || [];
+          this.permissions = Array.isArray(rawData) ? rawData : (rawData?.data || []);
           this.currentPage = response.data.meta?.current_page || 1;
           this.total = response.data.meta?.total || 0;
         }

@@ -75,7 +75,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">{{ submitBtnText
-                            }}</button>
+                        }}</button>
                     </div>
                 </form>
             </div>
@@ -138,7 +138,7 @@ watch(() => props.driverData, (newVal) => {
             email: newVal.email || '',
             phone: newVal.phone || '',
             driver_license: newVal.driver_license || '',
-            address: newVal.address || '',
+            address: (newVal.address || '').replace(/\r?\n|\r/g, ' ').trim(),
             status: newVal.status || 'active',
             password: '',
             password_confirmation: ''

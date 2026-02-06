@@ -45,11 +45,13 @@
                                 </div>
                             </template>
                             <template v-if="column.key === 'name'">
-                                <h2 class="table-avatar">
-                                    <a href="javascript:void(0);" class="avatar avatar-sm me-2"><img
-                                            class="avatar-img rounded-circle" src="@/assets/img/profiles/avatar-01.jpg"
-                                            alt="User Image"></a>
-                                    <a href="javascript:void(0);">{{ record.name }} <span>{{ record.email }}</span></a>
+                                <h2 class="table-avatar d-flex align-items-center">
+                                    <user-avatar :image="record.image" size="avatar-lg" />
+                                    <div class="ms-2">
+                                        <a href="javascript:void(0);" class="text-dark fw-medium">{{ record.name }}</a>
+                                        <a href="javascript:void(0);" class="fs-12" style="color: #999999;">{{
+                                            record.email }}</a>
+                                    </div>
                                 </h2>
                             </template>
                             <template v-if="column.key === 'status'">
@@ -254,6 +256,7 @@ const drivers = computed(() => (driversStore.drivers || []).map((item) => {
         phone: attr.phone,
         address: attr.address,
         driver_license: attr.driver_license,
+        image: attr.image,
         status: attr.status || 'active',
         StatusLabel: attr.status ? attr.status.charAt(0).toUpperCase() + attr.status.slice(1) : 'Active',
         statusClass: attr.status === 'inactive' ? 'badge-soft-danger' : 'badge-soft-success',

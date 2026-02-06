@@ -99,10 +99,9 @@ const columns = [
 ];
 
 const fetchPermissions = async () => {
-  // If route has ID, set it in store
-  /* if (route.params.id) {
-      permissionsStore.roleId = route.params.id; // Assuming we need this
-  } */
+  if (route.query.role_id) {
+    permissionsStore.roleId = route.query.role_id;
+  }
   await permissionsStore.index();
 };
 

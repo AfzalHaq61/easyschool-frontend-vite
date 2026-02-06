@@ -47,100 +47,44 @@
 
         <div class="d-flex align-items-center">
           <div class="dropdown me-2">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-outline-light fw-normal bg-white d-flex align-items-center p-2"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a href="javascript:void(0);" class="btn btn-outline-light fw-normal bg-white d-flex align-items-center p-2"
+              data-bs-toggle="dropdown" aria-expanded="false">
               <i class="ti ti-calendar-due me-1"></i>Academic Year : 2024 / 2025
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a
-                href="javascript:void(0);"
-                class="dropdown-item d-flex align-items-center"
-              >
+              <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
                 Academic Year : 2023 / 2024
               </a>
-              <a
-                href="javascript:void(0);"
-                class="dropdown-item d-flex align-items-center"
-              >
+              <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
                 Academic Year : 2022 / 2023
               </a>
-              <a
-                href="javascript:void(0);"
-                class="dropdown-item d-flex align-items-center"
-              >
+              <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
                 Academic Year : 2021 / 2022
               </a>
             </div>
           </div>
           <div class="pe-1 ms-1">
             <div class="dropdown">
-              <a
-                href="javascript:void(0);"
+              <a href="javascript:void(0);"
                 class="btn btn-outline-light bg-white btn-icon d-flex align-items-center me-1 p-2"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src="@/assets/img/flags/us.png"
-                  alt="Language"
-                  class="img-fluid rounded-pill"
-                />
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="@/assets/img/flags/us.png" alt="Language" class="img-fluid rounded-pill" />
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <a
-                  href="javascript:void(0);"
-                  class="dropdown-item active d-flex align-items-center"
-                >
-                  <img
-                    class="me-2 rounded-pill"
-                    src="@/assets/img/flags/us.png"
-                    alt="Img"
-                    height="22"
-                    width="22"
-                  />
+                <a href="javascript:void(0);" class="dropdown-item active d-flex align-items-center">
+                  <img class="me-2 rounded-pill" src="@/assets/img/flags/us.png" alt="Img" height="22" width="22" />
                   English
                 </a>
-                <a
-                  href="javascript:void(0);"
-                  class="dropdown-item d-flex align-items-center"
-                >
-                  <img
-                    class="me-2 rounded-pill"
-                    src="@/assets/img/flags/fr.png"
-                    alt="Img"
-                    height="22"
-                    width="22"
-                  />
+                <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+                  <img class="me-2 rounded-pill" src="@/assets/img/flags/fr.png" alt="Img" height="22" width="22" />
                   French
                 </a>
-                <a
-                  href="javascript:void(0);"
-                  class="dropdown-item d-flex align-items-center"
-                >
-                  <img
-                    class="me-2 rounded-pill"
-                    src="@/assets/img/flags/es.png"
-                    alt="Img"
-                    height="22"
-                    width="22"
-                  />
+                <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+                  <img class="me-2 rounded-pill" src="@/assets/img/flags/es.png" alt="Img" height="22" width="22" />
                   Spanish
                 </a>
-                <a
-                  href="javascript:void(0);"
-                  class="dropdown-item d-flex align-items-center"
-                >
-                  <img
-                    class="me-2 rounded-pill"
-                    src="@/assets/img/flags/de.png"
-                    alt="Img"
-                    height="22"
-                    width="22"
-                  />
+                <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+                  <img class="me-2 rounded-pill" src="@/assets/img/flags/de.png" alt="Img" height="22" width="22" />
                   German
                 </a>
               </div>
@@ -148,12 +92,8 @@
           </div>
           <div class="pe-1">
             <div class="dropdown">
-              <a
-                href="javascript:void(0);"
-                class="btn btn-outline-light bg-white btn-icon me-1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+              <a href="javascript:void(0);" class="btn btn-outline-light bg-white btn-icon me-1"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="ti ti-square-rounded-plus"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right border shadow-sm dropdown-md">
@@ -163,57 +103,45 @@
                 <div class="p-3 pb-0">
                   <div class="row gx-2">
                     <div class="col-6">
-                      <router-link
-                        to="/students/add-student"
-                        class="d-block bg-primary-transparent ronded p-2 text-center mb-3 class-hover"
-                      >
+                      <router-link to="/students/add-student"
+                        class="d-block bg-primary-transparent ronded p-2 text-center mb-3 class-hover">
                         <div class="avatar avatar-lg mb-2">
                           <span
-                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-primary rounded-circle"
-                            ><i class="ti ti-school"></i
-                          ></span>
+                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-primary rounded-circle"><i
+                              class="ti ti-school"></i></span>
                         </div>
                         <p class="text-dark">Students</p>
                       </router-link>
                     </div>
                     <div class="col-6">
-                      <router-link
-                        to="/teachers/add-teacher"
-                        class="d-block bg-success-transparent ronded p-2 text-center mb-3 class-hover"
-                      >
+                      <router-link to="/teachers/add-teacher"
+                        class="d-block bg-success-transparent ronded p-2 text-center mb-3 class-hover">
                         <div class="avatar avatar-lg mb-2">
                           <span
-                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-success rounded-circle"
-                            ><i class="ti ti-users"></i
-                          ></span>
+                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-success rounded-circle"><i
+                              class="ti ti-users"></i></span>
                         </div>
                         <p class="text-dark">Teachers</p>
                       </router-link>
                     </div>
                     <div class="col-6">
-                      <router-link
-                        to="/hrm/add-staff"
-                        class="d-block bg-warning-transparent ronded p-2 text-center mb-3 class-hover"
-                      >
+                      <router-link to="/hrm/add-staff"
+                        class="d-block bg-warning-transparent ronded p-2 text-center mb-3 class-hover">
                         <div class="avatar avatar-lg rounded-circle mb-2">
                           <span
-                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-warning rounded-circle"
-                            ><i class="ti ti-users-group"></i
-                          ></span>
+                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-warning rounded-circle"><i
+                              class="ti ti-users-group"></i></span>
                         </div>
                         <p class="text-dark">Staffs</p>
                       </router-link>
                     </div>
                     <div class="col-6">
-                      <router-link
-                        to="/accounts/add-invoice"
-                        class="d-block bg-info-transparent ronded p-2 text-center mb-3 class-hover"
-                      >
+                      <router-link to="/accounts/add-invoice"
+                        class="d-block bg-info-transparent ronded p-2 text-center mb-3 class-hover">
                         <div class="avatar avatar-lg mb-2">
                           <span
-                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-info rounded-circle"
-                            ><i class="ti ti-license"></i
-                          ></span>
+                            class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-info rounded-circle"><i
+                              class="ti ti-license"></i></span>
                         </div>
                         <p class="text-dark">Invoice</p>
                       </router-link>
@@ -224,52 +152,29 @@
             </div>
           </div>
           <div class="pe-1">
-            <a
-              href="javascript:void(0);"
-              ref="darkModeToggle"
-              class="dark-mode-toggle activate btn btn-outline-light bg-white btn-icon me-1"
-              @click="enableDarkMode"
-            >
+            <a href="javascript:void(0);" ref="darkModeToggle"
+              class="dark-mode-toggle activate btn btn-outline-light bg-white btn-icon me-1" @click="enableDarkMode">
               <i class="ti ti-moon"></i>
             </a>
-            <a
-              href="javascript:void(0);"
-              ref="lightModeToggle"
-              class="dark-mode-toggle btn btn-outline-light bg-white btn-icon me-1"
-              @click="disableDarkMode"
-            >
+            <a href="javascript:void(0);" ref="lightModeToggle"
+              class="dark-mode-toggle btn btn-outline-light bg-white btn-icon me-1" @click="disableDarkMode">
               <i class="ti ti-brightness-up"></i>
             </a>
           </div>
-          <div
-            ref="notificationItem"
-            :class="notificationClass"
-            @click="handleClick"
-            id="notification_item"
-          >
-            <a
-              href="javascript:void(0);"
-              class="btn btn-outline-light bg-white btn-icon position-relative me-1"
-              id="notification_popup"
-            >
+          <div ref="notificationItem" :class="notificationClass" @click="handleClick" id="notification_item">
+            <a href="javascript:void(0);" class="btn btn-outline-light bg-white btn-icon position-relative me-1"
+              id="notification_popup">
               <i class="ti ti-bell"></i>
               <span class="notification-status-dot"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-end notification-dropdown p-4">
-              <div
-                class="d-flex align-items-center justify-content-between border-bottom p-0 pb-3 mb-3"
-              >
+              <div class="d-flex align-items-center justify-content-between border-bottom p-0 pb-3 mb-3">
                 <h4 class="notification-title">Notifications (2)</h4>
                 <div class="d-flex align-items-center">
-                  <a href="javascript:void(0);" class="text-primary fs-15 me-3 lh-1"
-                    >Mark all as read</a
-                  >
+                  <a href="javascript:void(0);" class="text-primary fs-15 me-3 lh-1">Mark all as read</a>
                   <div class="dropdown">
-                    <a
-                      href="javascript:void(0);"
-                      class="bg-white dropdown-toggle"
-                      data-bs-toggle="dropdown"
-                      ><i class="ti ti-calendar-due me-1"></i>Today
+                    <a href="javascript:void(0);" class="bg-white dropdown-toggle" data-bs-toggle="dropdown"><i
+                        class="ti ti-calendar-due me-1"></i>Today
                     </a>
                     <ul class="dropdown-menu mt-2 p-3">
                       <li>
@@ -322,9 +227,7 @@
                             appointment on 02:00 PM
                           </p>
                           <span>10 mins ago</span>
-                          <div
-                            class="d-flex justify-content-start align-items-center mt-1"
-                          >
+                          <div class="d-flex justify-content-start align-items-center mt-1">
                             <span class="btn btn-light btn-sm me-2">Deny</span>
                             <span class="btn btn-primary btn-sm">Approve</span>
                           </div>
@@ -369,51 +272,27 @@
               </div>
               <div class="d-flex p-0">
                 <a href="javascript:void(0);" class="btn btn-light w-100 me-2">Cancel</a>
-                <router-link to="/activities" class="btn btn-primary w-100"
-                  >View All</router-link
-                >
+                <router-link to="/activities" class="btn btn-primary w-100">View All</router-link>
               </div>
             </div>
           </div>
           <div class="pe-1">
-            <router-link
-              to="/application/chat"
-              class="btn btn-outline-light bg-white btn-icon position-relative me-1"
-            >
+            <router-link to="/application/chat" class="btn btn-outline-light bg-white btn-icon position-relative me-1">
               <i class="ti ti-brand-hipchat"></i>
               <span class="chat-status-dot"></span>
             </router-link>
           </div>
+
           <div class="pe-1">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-outline-light bg-white btn-icon me-1"
-            >
-              <i class="ti ti-chart-bar"></i>
-            </a>
-          </div>
-          <div class="pe-1">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-outline-light bg-white btn-icon me-1"
-              id="btnFullscreen"
-              @click="initFullScreen"
-            >
+            <a href="javascript:void(0);" class="btn btn-outline-light bg-white btn-icon me-1" id="btnFullscreen"
+              @click="initFullScreen">
               <i class="ti ti-maximize"></i>
             </a>
           </div>
           <div class="dropdown ms-1">
-            <a
-              href="javascript:void(0);"
-              class="dropdown-toggle d-flex align-items-center"
-              data-bs-toggle="dropdown"
-            >
+            <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
               <span class="avatar avatar-md rounded">
-                <img
-                  src="@/assets/img/profiles/avatar-27.jpg"
-                  alt="Img"
-                  class="img-fluid"
-                />
+                <img src="@/assets/img/profiles/avatar-27.jpg" alt="Img" class="img-fluid" />
               </span>
             </a>
             <div class="dropdown-menu">
@@ -428,23 +307,13 @@
                   </div>
                 </div>
                 <hr class="m-0" />
-                <router-link
-                  class="dropdown-item d-inline-flex align-items-center p-2"
-                  to="/pages/profile"
-                >
-                  <i class="ti ti-user-circle me-2"></i>My Profile</router-link
-                >
-                <router-link
-                  class="dropdown-item d-inline-flex align-items-center p-2"
-                  to="/settings/profile-settings"
-                  ><i class="ti ti-settings me-2"></i>Settings</router-link
-                >
+                <router-link class="dropdown-item d-inline-flex align-items-center p-2" to="/pages/profile">
+                  <i class="ti ti-user-circle me-2"></i>My Profile</router-link>
+                <router-link class="dropdown-item d-inline-flex align-items-center p-2"
+                  to="/settings/security-settings"><i class="ti ti-settings me-2"></i>Settings</router-link>
                 <hr class="m-0" />
-                <router-link
-                  class="dropdown-item d-inline-flex align-items-center p-2"
-                  to="/" @click="logout"
-                  ><i class="ti ti-login me-2"></i>Logout</router-link
-                >
+                <router-link class="dropdown-item d-inline-flex align-items-center p-2" to="/" @click="logout"><i
+                    class="ti ti-login me-2"></i>Logout</router-link>
               </div>
             </div>
           </div>
@@ -454,18 +323,11 @@
 
     <!-- Mobile Menu -->
     <div class="dropdown mobile-user-menu">
-      <a
-        href="javascript:void(0);"
-        class="nav-link dropdown-toggle"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        ><i class="fa fa-ellipsis-v"></i
-      ></a>
+      <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i
+          class="fa fa-ellipsis-v"></i></a>
       <div class="dropdown-menu dropdown-menu-end">
         <router-link class="dropdown-item" to="/pages/profile">My Profile</router-link>
-        <router-link class="dropdown-item" to="/settings/profile-settings"
-          >Settings</router-link
-        >
+        <router-link class="dropdown-item" to="/settings/security-settings">Settings</router-link>
         <router-link class="dropdown-item" to="/" @click="logout">Logout</router-link>
       </div>
     </div>
@@ -635,17 +497,17 @@ export default {
 </script>
 
 <script setup>
-  import router from "@/router";
-  import { useAuthStore } from '@/stores/auth';
+import router from "@/router";
+import { useAuthStore } from '@/stores/auth';
 
-  const authStore = useAuthStore();
+const authStore = useAuthStore();
 
-  const logout = async () => {
-    try {
-      await authStore.logout();
-      router.push('/login');
-    } catch (error) {
-      console.error('Error during logout:', error);
-    }
-  };
+const logout = async () => {
+  try {
+    await authStore.logout();
+    router.push('/login');
+  } catch (error) {
+    console.error('Error during logout:', error);
+  }
+};
 </script>

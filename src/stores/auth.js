@@ -23,7 +23,9 @@ export const useAuthStore = defineStore('auth', {
   state: () => ({
     user: JSON.parse(localStorage.getItem('user')) || null,
     token: localStorage.getItem('authToken') || null,
-    notification: null
+    notification: null,
+    currency: import.meta.env.VITE_CURRENCY || '$',
+    defaultAvatar: import.meta.env.VITE_DEFAULT_AVATAR || '/src/assets/img/empty-avatar.jpg'
   }),
 
   getters: {

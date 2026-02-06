@@ -57,6 +57,11 @@ import RoleAddAndEditModal from '@/components/shared/modals/role-add-and-edit-mo
 import ClassAddEditModal from '@/components/shared/modals/class-add-edit-modal.vue';
 import SectionAddEditModal from '@/components/shared/modals/section-add-edit-modal.vue';
 import DeleteConfirmModal from '@/components/shared/modals/delete-confirm-modal.vue';
+import UserAvatar from '@/components/shared/user-avatar.vue';
+import VehicleAddEditModal from '@/components/shared/modals/vehicle-add-edit-modal.vue';
+import VehicleLiveTrackModal from '@/components/shared/modals/vehicle-live-track-modal.vue';
+import PickupPointAddEditModal from '@/components/shared/modals/pickup-point-add-edit-modal.vue';
+import AssignVehicleAddEditModal from '@/components/shared/modals/assign-vehicle-add-edit-modal.vue';
 
 /************Page Components********************/
 import ChatContent from "@/views/pages/application/chat/chat-content.vue";
@@ -137,13 +142,11 @@ import Library_Books_Filter from '@/views/pages/management/library-members/libra
 import Library_Issue_Filter from '@/views/pages/management/library-members/library-issue-filter.vue'
 import Sports_Filter from '@/views/pages/management/sports-filter.vue'
 import Player_Filter from '@/views/pages/management/player-filter.vue'
-import Hostel_Filter from '@/views/pages/management/hostel/hostel-filter.vue'
-import Hostel_Rooms_Filter from '@/views/pages/management/hostel/hostel-rooms-filter.vue'
-import Hostel_Room_Type_Filter from '@/views/pages/management/hostel/hostel-room-type-filter.vue'
-import Pickup_Filter from '@/views/pages/management/transport/pickup-filter.vue'
-import Vehicle_Filter from '@/views/pages/management/transport/vehicle-filter.vue'
-import Assign_Vehicle_Filter from '@/views/pages/management/transport/assign-vehicle-filter.vue'
 import Collect_Filter from '@/views/pages/management/fees-collection/collect-filter.vue'
+import HostelRoomTypeModal from '@/components/shared/modals/hostel-room-type-modal.vue'
+import HostelModal from '@/components/shared/modals/hostel-modal.vue'
+import HostelRoomModal from '@/components/shared/modals/hostel-room-modal.vue'
+import PasswordModal from '@/components/shared/modals/password-modal.vue'
 import Staff_Filter from '@/views/pages/hrm/staff/staff-filter.vue'
 import Department_Filter from '@/views/pages/hrm/department-filter.vue'
 import Designation_Filter from '@/views/pages/hrm/designation-filter.vue'
@@ -199,6 +202,7 @@ import Schedule_List_Modal from '@/components/modal/schedule-list-modal.vue'
 import Student_Details_Modal from '@/components/modal/student-details-modal.vue'
 import Teacher_Details_Modal from '@/components/modal/teacher-details-modal.vue'
 import Class_Room_Modal from '@/components/modal/class-room-modal.vue'
+import Pickup_Point_Modal from '@/components/modal/pickup-point-modal.vue'
 import Class_Section_Modal from '@/components/modal/class-section-modal.vue'
 import Class_Subject_Modal from '@/components/modal/class-subject-modal.vue'
 import Class_Syllabus_Modal from '@/components/modal/class-syllabus-modal.vue'
@@ -220,7 +224,7 @@ import Hostel_Room_Type_Modal from '@/components/modal/hostel-room-type-modal.vu
 import Route_Modal from '@/components/modal/route-modal.vue'
 import Pickup_Modal from '@/components/modal/pickup-modal.vue'
 import Driver_Modal from '@/components/modal/driver-modal.vue'
-import Vehicle_Modal from '@/components/modal/vehicle-modal.vue'
+// import Vehicle_Modal from '@/components/modal/vehicle-modal.vue'
 import Assign_Vehicle_Modal from '@/components/modal/assign-vehicle-modal.vue'
 import Connected_Modal from '@/components/modal/connected-modal.vue'
 import Department_Modal from '@/components/modal/department-modal.vue'
@@ -332,6 +336,11 @@ app.component('role-add-and-edit-modal', RoleAddAndEditModal);
 app.component('class-add-edit-modal', ClassAddEditModal);
 app.component('section-add-edit-modal', SectionAddEditModal);
 app.component('delete-confirm-modal', DeleteConfirmModal);
+app.component('user-avatar', UserAvatar);
+app.component('vehicle-add-edit-modal', VehicleAddEditModal);
+app.component('vehicle-live-track-modal', VehicleLiveTrackModal);
+app.component('pickup-point-add-edit-modal', PickupPointAddEditModal);
+app.component('assign-vehicle-add-edit-modal', AssignVehicleAddEditModal);
 
 app.component('attendance-report-tabset', Attendance_Report_Tabset);
 
@@ -414,12 +423,6 @@ app.component('library-books-filter', Library_Books_Filter)
 app.component('library-issue-filter', Library_Issue_Filter)
 app.component('sports-filter', Sports_Filter)
 app.component('player-filter', Player_Filter)
-app.component('hostel-filter', Hostel_Filter)
-app.component('hostel-rooms-filter', Hostel_Rooms_Filter)
-app.component('hostel-room-type-filter', Hostel_Room_Type_Filter)
-app.component('pickup-filter', Pickup_Filter)
-app.component('vehicle-filter', Vehicle_Filter)
-app.component('assign-vehicle-filter', Assign_Vehicle_Filter)
 app.component('staff-filter', Staff_Filter)
 app.component('department-filter', Department_Filter)
 app.component('designation-filter', Designation_Filter)
@@ -475,6 +478,7 @@ app.component('schedule-list-modal', Schedule_List_Modal)
 app.component('student-details-modal', Student_Details_Modal)
 app.component('teacher-details-modal', Teacher_Details_Modal)
 app.component('class-room-modal', Class_Room_Modal)
+app.component('pickup-point-modal', Pickup_Point_Modal)
 app.component('class-section-modal', Class_Section_Modal)
 app.component('class-subject-modal', Class_Subject_Modal)
 app.component('class-syllabus-modal', Class_Syllabus_Modal)
@@ -496,7 +500,7 @@ app.component('hostel-room-type-modal', Hostel_Room_Type_Modal)
 app.component('route-modal', Route_Modal)
 app.component('pickup-modal', Pickup_Modal)
 app.component('driver-modal', Driver_Modal)
-app.component('vehicle-modal', Vehicle_Modal)
+// app.component('vehicle-modal', Vehicle_Modal)
 app.component('assign-vehicle-modal', Assign_Vehicle_Modal)
 app.component('connected-modal', Connected_Modal)
 app.component('department-modal', Department_Modal)
@@ -570,4 +574,9 @@ app.component('ThemifyIcon', ThemifyIcon);
 app.component('SimpleLineIcons', SimpleLineIcons);
 app.component('IconHome', IconHome);
 app.use(createPinia());
-app.use(router).mount('#app');
+app.use(router);
+app.component('hostel-room-type-modal', HostelRoomTypeModal);
+app.component('hostel-modal', HostelModal);
+app.component('hostel-room-modal', HostelRoomModal);
+app.component('password-modal', PasswordModal);
+app.mount('#app');

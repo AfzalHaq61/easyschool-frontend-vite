@@ -40,11 +40,13 @@ export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', 
         const response = await axios.get('/roles', { params })
 
         if (response?.status === 200) {
-          this.roles = response.data.data || [];
-          this.currentPage = response.data.meta.current_page;
-          this.perPage = response.data.meta.per_page;
-          this.total = response.data.meta.total;
-          this.lastPage = response.data.meta.last_page;
+          const rawData = response.data.data || response.data || [];
+          this.roles = Array.isArray(rawData) ? rawData : (rawData?.data || []);
+          
+          this.currentPage = response.data.meta?.current_page || 1;
+          this.perPage = response.data.meta?.per_page || 10;
+          this.total = response.data.meta?.total || 0;
+          this.lastPage = response.data.meta?.last_page || 1;
 
           return true;
         }
@@ -103,13 +105,29 @@ export const useRolesAndPermissionsStore = defineStore('roles-and-permissions', 
      * ------------------------------------------------------------------- */
     async export() {
       try {
-        const url = `https://easyschool.ddev.site/api/roles/export?type=${this.exportType}`;
-        if(this.exportType == 'print') {
+        const baseUrl = axios.defaults.baseURL || 'https://easyschool.ddev.site/api';
+        const queryParams = new URLSearchParams({
+          type: this.exportType,
+          search: this.search?.trim() || '',
+          sort: this.sort || '',
+          date_start: this.dateStart || '',
+          date_end: this.dateEnd || ''
+        });
+
+        // Remove empty params
+        for (const [key, value] of queryParams.entries()) {
+          if (!value) queryParams.delete(key);
+        }
+
+        const url = `${baseUrl}/roles/export?${queryParams.toString()}`;
+
+        if(this.exportType === 'print') {
           window.open(url, '_blank');
         } else {
           window.location.href = url;
         }
       } catch (error) {
+        console.error('Error exporting roles:', error);
         return false;
       }
     }

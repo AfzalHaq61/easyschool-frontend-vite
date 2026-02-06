@@ -47,8 +47,8 @@
                           class="ti ti-edit-circle me-2"></i>Edit</a>
                     </li>
                     <li>
-                      <router-link to="/user/permission" class="dropdown-item rounded-1"><i
-                          class="ti ti-shield me-2"></i>Permission</router-link>
+                      <router-link :to="{ path: '/user/permission', query: { role_id: record.id } }"
+                        class="dropdown-item rounded-1"><i class="ti ti-shield me-2"></i>Permission</router-link>
                     </li>
                     <li>
                       <a class="dropdown-item rounded-1" href="javascript:void(0);" @click="handleDelete(record.id)"

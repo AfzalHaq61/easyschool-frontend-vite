@@ -3,289 +3,247 @@
   <layout-sidebar></layout-sidebar>
   <div class="page-wrapper">
     <div class="content">
-      <!-- Page Header -->
       <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
         <breadcrumb-index :title="title" :text="text" :text1="text1" :text2="text2" />
-        <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
-          <div class="pe-1 mb-2">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-outline-light bg-white btn-icon me-1"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              aria-label="Refresh"
-              data-bs-original-title="Refresh"
-            >
-              <i class="ti ti-refresh"></i>
-            </a>
-          </div>
-          <div class="pe-1 mb-2">
-            <button
-              type="button"
-              class="btn btn-outline-light bg-white btn-icon me-1"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              aria-label="Print"
-              data-bs-original-title="Print"
-            >
-              <i class="ti ti-printer"></i>
-            </button>
-          </div>
-          <div class="dropdown me-2 mb-2">
-            <a
-              href="javascript:void(0);"
-              class="dropdown-toggle btn btn-light fw-medium d-inline-flex align-items-center"
-              data-bs-toggle="dropdown"
-            >
-              <i class="ti ti-file-export me-2"></i>Export
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end p-3">
-              <li>
-                <a href="javascript:void(0);" class="dropdown-item rounded-1"
-                  ><i class="ti ti-file-type-pdf me-1"></i>Export as PDF</a
-                >
-              </li>
-              <li>
-                <a href="javascript:void(0);" class="dropdown-item rounded-1"
-                  ><i class="ti ti-file-type-xls me-1"></i>Export as Excel
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="mb-2">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-primary d-flex align-items-center"
-              data-bs-toggle="modal"
-              data-bs-target="#add_hostel_room_type"
-              ><i class="ti ti-square-rounded-plus me-2"></i>Add Room Type</a
-            >
-          </div>
-        </div>
+        <top-action-buttons name="Room Type" id="add_hostel_room_type" @print="() => exportData('print')"
+          @export="exportData" @add="openAddModal" />
       </div>
 
-      <div class="card">
-        <hostel-room-type-filter></hostel-room-type-filter>
-        <div class="card-body p-0 py-3">
-          <!-- Student List -->
-          <div class="custom-datatable-filter table-responsive">
-            <div class="row">
-              <div class="col-sm-12 col-md-6">
-                <div class="dataTables_length" id="DataTables_Table_0_length">
-                  <label
-                    >Row Per Page
-                    <select
-                      name="DataTables_Table_0_length"
-                      aria-controls="DataTables_Table_0"
-                      class="form-select form-select-sm"
-                    >
-                      <option value="10">10</option>
-                      <option value="25">25</option>
-                      <option value="50">50</option>
-                      <option value="100">100</option>
-                    </select>
-                    Entries</label
-                  >
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-6">
-                <div id="DataTables_Table_0_filter" class="dataTables_filter text-end">
-                  <label>
-                    <input
-                      type="search"
-                      class="form-control form-control-sm"
-                      placeholder="Search"
-                      aria-controls="DataTables_Table_0"
-                  /></label>
-                </div>
+      <alert v-if="notificationStore.notification"
+        :type="notificationStore.notification.status === 'error' ? 'danger' : notificationStore.notification.status"
+        :icon="notificationStore.notification.status === 'error' ? 'alert-octagon' : 'check-circle'"
+        :message="notificationStore.notification.message" @update:message="notificationStore.clearNotification()" />
+
+      <card title="Hostel Room Types" v-model:dateRange="dateRange" v-model:currentSort="currentSort"
+        @update:currentSort="sortData" v-model:rowsPerPage="rowsPerPage" v-model:searchQuery="searchQuery"
+        :show-filter="true" @filter-apply="applyFilter" @filter-reset="resetFilter">
+        <template #filter-body>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="form-label">Status</label>
+                <vue-select v-model="filterStatus" :options="statusOptions" id="seleus" placeholder="Select" />
               </div>
             </div>
-
-            <a-table
-              class="table datatable thead-light"
-              :columns="columns"
-              :data-source="data"
-              :row-selection="rowSelection"
-            >
-              <template #bodyCell="{ column, record }">
-                <template v-if="column.key === 'ID'">
-                  <div>
-                    <a href="javascript:void(0);" class="link-primary">{{ record.ID }}</a>
-                  </div>
-                </template>
-                <template v-if="column.key === 'action'">
-                  <div class="d-flex align-items-center">
-                    <div class="dropdown">
-                      <a
-                        href="javascript:void(0);"
-                        class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <i class="ti ti-dots-vertical fs-14"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-right p-3">
-                        <li>
-                          <a
-                            class="dropdown-item rounded-1"
-                            href="javascript:void(0);"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit_hostel_room_type"
-                            ><i class="ti ti-edit-circle me-2"></i>Edit</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item rounded-1"
-                            href="javascript:void(0);"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete-modal"
-                            ><i class="ti ti-trash-x me-2"></i>Delete</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </template>
-              </template>
-            </a-table>
           </div>
+        </template>
+        <div class="custom-datatable-filter table-responsive">
+          <a-table class="table datatable thead-light" :columns="columns" :data-source="roomTypes"
+            :row-selection="rowSelection" :pagination="{
+              current: hostelRoomTypesStore.currentPage,
+              pageSize: hostelRoomTypesStore.perPage,
+              total: hostelRoomTypesStore.total,
+              showSizeChanger: true,
+              showQuickJumper: true
+            }" @change="handleTableChange">
+            <template #bodyCell="{ column, record }">
+              <template v-if="column.key === 'hostel_room_type_id'">
+                <div>
+                  <a href="javascript:void(0);" class="link-primary">{{ record.RoomTypeID }}</a>
+                </div>
+              </template>
+              <template v-if="column.key === 'Status'">
+                <span :class="record.statusClass" class="badge d-inline-flex align-items-center">
+                  <i class="ti ti-circle-filled fs-5 me-1"></i>{{ record.Status }}
+                </span>
+              </template>
+              <template v-if="column.key === 'action'">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown">
+                    <a href="javascript:void(0);"
+                      class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="ti ti-dots-vertical fs-14"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right p-3">
+                      <li>
+                        <a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal"
+                          data-bs-target="#edit_hostel_room_type"
+                          @click="selectedRoomType = { id: record.id, ...record.originalAttributes }"><i
+                            class="ti ti-edit-circle me-2"></i>Edit</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item rounded-1" href="javascript:void(0);" @click="handleDelete(record.id)"
+                          data-bs-toggle="modal" data-bs-target="#delete-modal"><i
+                            class="ti ti-trash-x me-2"></i>Delete</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </template>
+            </template>
+          </a-table>
         </div>
-      </div>
-      <!-- /Student List -->
+      </card>
     </div>
   </div>
-  <hostel-room-type-modal></hostel-room-type-modal>
+  <hostel-room-type-modal :room-type-data="selectedRoomType" @success="fetchData"
+    modal-id="add_hostel_room_type"></hostel-room-type-modal>
+  <hostel-room-type-modal :is-edit="true" :room-type-data="selectedRoomType" @success="fetchData"
+    modal-id="edit_hostel_room_type"></hostel-room-type-modal>
+  <delete-confirm-modal modal-id="delete-modal" @confirmed="confirmDelete"></delete-confirm-modal>
 </template>
-<script>
+
+<script setup>
+import { ref, onMounted, computed, watch } from 'vue';
+import VueSelect from 'vue3-select2-component';
+import moment from "moment";
+import { useHostelRoomTypesStore } from '@/stores/hostel-room-types';
+import { useNotificationStore } from "@/stores/notification";
+
+const hostelRoomTypesStore = useHostelRoomTypesStore();
+const notificationStore = useNotificationStore();
+
+const title = "Hostel Room Type";
+const text = "Dashboard";
+const text1 = "Hostel";
+const text2 = "Room Type";
+
+const selectedRoomType = ref({});
+const today = new Date();
+const dateRange = ref([today, today]);
+const rowsPerPage = ref(hostelRoomTypesStore.perPage);
+let currentSort = ref('asc');
+const searchQuery = ref('');
+const filterStatus = ref('Select');
+const statusOptions = ref(['Select', 'Active', 'Inactive']);
+
 const columns = [
   {
-    sorter: false,
-  },
-  {
     title: "ID",
-    dataIndex: "ID",
-    key: "ID",
-    sorter: {
-      compare: (a, b) => {
-        a = a.ID.toLowerCase();
-        b = b.ID.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "hostel_room_type_id",
+    key: "hostel_room_type_id",
+    sorter: true,
   },
   {
     title: "Room Type",
-    dataIndex: "RoomType",
-    sorter: {
-      compare: (a, b) => {
-        a = a.RoomType.toLowerCase();
-        b = b.RoomType.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "name",
+    key: "name",
+    sorter: true,
   },
   {
     title: "Description",
-    dataIndex: "Description",
-    sorter: {
-      compare: (a, b) => {
-        a = a.Description.toLowerCase();
-        b = b.Description.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "description",
+    key: "description",
+    sorter: true,
+  },
+  {
+    title: "Status",
+    dataIndex: "status",
+    key: "Status",
+    sorter: true,
   },
   {
     title: "Action",
     key: "action",
-    sorter: true,
+    width: 80,
   },
 ];
-const data = [
-  {
-    key: "1",
-    ID: "RT846235",
-    RoomType: "One Bed",
-    Description:
-      "Enjoy serene solitude in our one-bed room, your tranquil retreat for                 focused studying",
-  },
-  {
-    key: "2",
-    ID: "RT846234",
-    RoomType: "One Bed AC",
-    Description: "Stay cool and focused in our one-bed AC room, your serene study haven",
-  },
-  {
-    key: "3",
-    ID: "RT846233",
-    RoomType: "Two Bed",
-    Description: "Study together in comfort and camaraderie in our two-bed room",
-  },
-  {
-    key: "4",
-    ID: "RT846232",
-    RoomType: "Two Bed AC",
-    Description: "Stay cool and study together in comfort in our two-bed AC room",
-  },
-  {
-    key: "5",
-    ID: "RT846231",
-    RoomType: "Three Bed",
-    Description:
-      "Study comfortably in our spacious three-bed room, share learning and                 camaraderie",
-  },
-  {
-    key: "6",
-    ID: "RT846230",
-    RoomType: "Three Bed AC",
-    Description:
-      "Experience collaborative studying in comfort with our three-bed AC room",
-  },
-  {
-    key: "7",
-    ID: "RT846229",
-    RoomType: "Four Bed",
-    Description:
-      "Engage in group study sessions and foster camaraderie in our spacious                 four-bed room",
-  },
-  {
-    key: "8",
-    ID: "RT846228",
-    RoomType: "Four Bed AC",
-    Description:
-      "Experience collaborative study sessions in comfort with our spacious                 four-bed AC room",
-  },
-  {
-    key: "9",
-    ID: "RT846227",
-    RoomType: "Five Bed",
-    Description: "Foster teamwork and academic synergy, ideal for group study sessions",
-  },
-  {
-    key: "10",
-    ID: "RT846226",
-    RoomType: "Five Bed AC",
-    Description:
-      "Optimal comfort meets collaborative studying, perfect for academic synergy                 among residents.",
-  },
-];
+
 const rowSelection = {
-  onChange: () => {},
-  onSelect: () => {},
-  onSelectAll: () => {},
+  onChange: () => { },
+  onSelect: () => { },
+  onSelectAll: () => { },
 };
-export default {
-  data() {
-    return {
-      title: "Room Type",
-      text: "Dashboard",
-      text1: "Management",
-      text2: "Room Type",
-      data,
-      columns,
-      rowSelection,
-    };
-  },
+
+const fetchData = async () => {
+  await hostelRoomTypesStore.index();
 };
+
+const handleTableChange = (pagination, filters, sorter) => {
+  hostelRoomTypesStore.currentPage = pagination.current;
+  hostelRoomTypesStore.perPage = pagination.pageSize;
+  rowsPerPage.value = pagination.pageSize;
+
+  if (sorter && sorter.order) {
+    const sortOrder = sorter.order === 'ascend' ? 'asc' : 'desc';
+    currentSort.value = sortOrder;
+    hostelRoomTypesStore.sort = sortOrder;
+  }
+
+  fetchData();
+};
+
+const sortData = (sortType) => {
+  currentSort.value = sortType;
+  hostelRoomTypesStore.sort = sortType;
+  fetchData();
+};
+
+const exportData = async (type) => {
+  hostelRoomTypesStore.exportType = type;
+  await hostelRoomTypesStore.export();
+};
+
+const handleDelete = (id) => {
+  hostelRoomTypesStore.id = id;
+};
+
+const confirmDelete = async () => {
+  if (hostelRoomTypesStore.id) {
+    const success = await hostelRoomTypesStore.destroy(hostelRoomTypesStore.id);
+    if (success) {
+      fetchData();
+    }
+  }
+};
+
+const openAddModal = () => {
+  selectedRoomType.value = {};
+};
+
+const applyFilter = () => {
+  hostelRoomTypesStore.status = filterStatus.value === 'Select' ? null : filterStatus.value.toLowerCase();
+  hostelRoomTypesStore.currentPage = 1;
+  fetchData();
+};
+
+const resetFilter = () => {
+  filterStatus.value = 'Select';
+  hostelRoomTypesStore.status = null;
+  hostelRoomTypesStore.currentPage = 1;
+  fetchData();
+};
+
+watch(rowsPerPage, (newVal) => {
+  hostelRoomTypesStore.perPage = parseInt(newVal);
+  hostelRoomTypesStore.currentPage = 1;
+  fetchData();
+});
+
+watch(dateRange, (newRange) => {
+  const m = moment.default || moment;
+  if (Array.isArray(newRange) && newRange.length === 2) {
+    const [start, end] = newRange;
+    hostelRoomTypesStore.dateStart = m(start).format('YYYY-MM-DD');
+    hostelRoomTypesStore.dateEnd = m(end).format('YYYY-MM-DD');
+    hostelRoomTypesStore.currentPage = 1;
+    fetchData();
+  }
+});
+
+watch(searchQuery, (newVal) => {
+  hostelRoomTypesStore.search = newVal;
+  hostelRoomTypesStore.currentPage = 1;
+  fetchData();
+});
+
+onMounted(() => {
+  fetchData();
+});
+
+const roomTypes = computed(() => (hostelRoomTypesStore.roomTypes || []).map((item, index) => {
+  const attr = item.attributes || {};
+  return {
+    key: index + 1,
+    id: item.id,
+    RoomTypeID: attr.hostel_room_type_id || `HRT-${item.id}`,
+    name: attr.name,
+    description: attr.description,
+    Status: attr.status ? attr.status.charAt(0).toUpperCase() + attr.status.slice(1) : 'Active',
+    statusClass: attr.status === 'inactive' ? 'badge-soft-danger' : 'badge-soft-success',
+    status: attr.status || 'active',
+    originalAttributes: attr
+  };
+}));
 </script>

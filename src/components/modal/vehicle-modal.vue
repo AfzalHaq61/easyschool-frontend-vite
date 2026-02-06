@@ -5,12 +5,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Add New Vehicle</h4>
-          <button
-            type="button"
-            class="btn-close custom-btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
             <i class="ti ti-x"></i>
           </button>
         </div>
@@ -22,35 +17,21 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Vehicle No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Vehicle No"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Vehicle No" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Vehicle Model</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Vehicle Model"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Vehicle Model" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Made of Year</label>
                       <div class="date-pic">
-                        <date-picker
-                          v-model="startdate"
-                          placeholder=""
-                          class="datetimepicker form-control"
-                          :editable="true"
-                          :clearable="false"
-                          :input-format="dateFormat"
-                        />
+                        <date-picker v-model="startdate" placeholder="" class="datetimepicker form-control"
+                          :editable="true" :clearable="false" :input-format="dateFormat" />
                         <span class="cal-icon"><i class="ti ti-calendar"></i></span>
                       </div>
                     </div>
@@ -58,41 +39,25 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Registration No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Registration No"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Registration No" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Chassis No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Chassis No"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Chassis No" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Seat Capacity</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Seat Capacity"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Seat Capacity" />
                     </div>
                   </div>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">GPS Tracking ID</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter GPS Tracking ID"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter GPS Tracking ID" />
                 </div>
                 <hr />
                 <div class="mb-3">
@@ -106,32 +71,20 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Driver License</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Driver License"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Driver License" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Driver Contact No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Driver Contact No"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Driver Contact No" />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="mb-0">
                 <label class="form-label">Driver Address</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter Driver Address"
-                />
+                <input type="text" class="form-control" placeholder="Enter Driver Address" />
               </div>
             </div>
           </div>
@@ -154,12 +107,7 @@
             <h4 class="modal-title">Edit Vehicle</h4>
             <span class="badge badge-soft-primary ms-2">ID : BB0482</span>
           </div>
-          <button
-            type="button"
-            class="btn-close custom-btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
             <i class="ti ti-x"></i>
           </button>
         </div>
@@ -171,37 +119,21 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Vehicle No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Vehicle No"
-                        value="8930"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Vehicle No" value="8930" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Vehicle Model</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Vehicle Model"
-                        value="Scania"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Vehicle Model" value="Scania" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Made of Year</label>
                       <div class="date-pic">
-                        <date-picker
-                          v-model="startdateOne"
-                          placeholder=""
-                          class="datetimepicker form-control"
-                          :editable="true"
-                          :clearable="false"
-                          :input-format="dateFormat"
-                        />
+                        <date-picker v-model="startdateOne" placeholder="" class="datetimepicker form-control"
+                          :editable="true" :clearable="false" :input-format="dateFormat" />
                         <span class="cal-icon"><i class="ti ti-calendar"></i></span>
                       </div>
                     </div>
@@ -209,44 +141,25 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Registration No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Registration No"
-                        value="US1A3545"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Registration No" value="US1A3545" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Chassis No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Chassis No"
-                        value="32546665456"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Chassis No" value="32546665456" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Seat Capacity</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Seat Capacity"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Seat Capacity" />
                     </div>
                   </div>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">GPS Tracking ID</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter GPS Tracking ID"
-                    value="GPS7899456689"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter GPS Tracking ID" value="GPS7899456689" />
                 </div>
                 <hr />
                 <div class="mb-3">
@@ -254,45 +167,28 @@
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Select Driver</label>
-                  <vue-select
-                    :options="EditDriveThos"
-                    id="editdrivethos"
-                    placeholder="Thomas"
-                  />
+                  <vue-select :options="EditDriveThos" id="editdrivethos" placeholder="Thomas" />
                 </div>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Driver License</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Driver License"
-                        value="LC7899456689"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Driver License" value="LC7899456689" />
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label class="form-label">Driver Contact No</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Driver Contact No"
-                        value="+1 64044 74890"
-                      />
+                      <input type="text" class="form-control" placeholder="Enter Driver Contact No"
+                        value="+1 64044 74890" />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="mb-0">
                 <label class="form-label">Driver Address</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter Driver Address"
-                  value="2233 Wood Street, Slidell, LA"
-                />
+                <input type="text" class="form-control" placeholder="Enter Driver Address"
+                  value="2233 Wood Street, Slidell, LA" />
               </div>
             </div>
           </div>
@@ -321,12 +217,7 @@
               delete.
             </p>
             <div class="d-flex justify-content-center">
-              <a
-                href="javascript:void(0);"
-                class="btn btn-light me-3"
-                data-bs-dismiss="modal"
-                >Cancel</a
-              >
+              <a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
               <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Yes, Delete</button>
             </div>
           </div>
@@ -343,16 +234,9 @@
         <div class="modal-header align-items-center">
           <div class="d-flex align-items-center">
             <h4 class="modal-title">Live Tracking Vehicle</h4>
-            <span class="badge badge-soft-primary ms-2"
-              >GPS Tracking ID : GPS7899456689</span
-            >
+            <span class="badge badge-soft-primary ms-2">GPS Tracking ID : GPS7899456689</span>
           </div>
-          <button
-            type="button"
-            class="btn-close custom-btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
             <i class="ti ti-x"></i>
           </button>
         </div>
@@ -378,17 +262,12 @@
           <div class="live-track-map w-100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.6088932774796!2d-117.8132203247921!3d33.64138153931407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcddf599c1986f%3A0x6826f6868b4f8e35!2sHillcrest%2C%20Irvine%2C%20CA%2092603%2C%20USA!5e0!3m2!1sen!2sin!4v1706772657955!5m2!1sen!2sin"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         <div class="modal-footer">
           <a href="javascript:void(0);" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
-          <router-link to="/transport/transport-vehicle" class="btn btn-primary"
-            >Reset to Live Location</router-link
-          >
+          <router-link to="/transport/vehicle" class="btn btn-primary">Reset to Live Location</router-link>
         </div>
       </div>
     </div>
@@ -411,7 +290,7 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$router.push("/transport/transport-vehicle");
+      this.$router.push("/transport/vehicle");
     },
   },
 };

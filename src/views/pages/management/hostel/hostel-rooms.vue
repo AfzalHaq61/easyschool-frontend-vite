@@ -3,346 +3,323 @@
   <layout-sidebar></layout-sidebar>
   <div class="page-wrapper">
     <div class="content">
-      <!-- Page Header -->
       <div class="d-md-flex d-block align-items-center justify-content-between mb-3">
         <breadcrumb-index :title="title" :text="text" :text1="text1" :text2="text2" />
-        <div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
-          <div class="pe-1 mb-2">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-outline-light bg-white btn-icon me-1"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              aria-label="Refresh"
-              data-bs-original-title="Refresh"
-            >
-              <i class="ti ti-refresh"></i>
-            </a>
-          </div>
-          <div class="pe-1 mb-2">
-            <button
-              type="button"
-              class="btn btn-outline-light bg-white btn-icon me-1"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              aria-label="Print"
-              data-bs-original-title="Print"
-            >
-              <i class="ti ti-printer"></i>
-            </button>
-          </div>
-          <div class="dropdown me-2 mb-2">
-            <a
-              href="javascript:void(0);"
-              class="dropdown-toggle btn btn-light fw-medium d-inline-flex align-items-center"
-              data-bs-toggle="dropdown"
-            >
-              <i class="ti ti-file-export me-2"></i>Export
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end p-3">
-              <li>
-                <a href="javascript:void(0);" class="dropdown-item rounded-1"
-                  ><i class="ti ti-file-type-pdf me-1"></i>Export as PDF</a
-                >
-              </li>
-              <li>
-                <a href="javascript:void(0);" class="dropdown-item rounded-1"
-                  ><i class="ti ti-file-type-xls me-1"></i>Export as Excel
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="mb-2">
-            <a
-              href="javascript:void(0);"
-              class="btn btn-primary d-flex align-items-center"
-              data-bs-toggle="modal"
-              data-bs-target="#add_hostel_rooms"
-              ><i class="ti ti-square-rounded-plus me-2"></i>Add Hostel Room</a
-            >
-          </div>
-        </div>
+        <top-action-buttons name="Hostel Room" id="add_hostel_rooms" @print="() => exportData('print')"
+          @export="exportData" @add="openAddModal" />
       </div>
 
-      <div class="card">
-        <hostel-rooms-filter></hostel-rooms-filter>
-        <div class="card-body p-0 py-3">
-          <!-- Student List -->
-          <div class="custom-datatable-filter table-responsive">
-            <div class="row">
-              <div class="col-sm-12 col-md-6">
-                <div class="dataTables_length" id="DataTables_Table_0_length">
-                  <label
-                    >Row Per Page
-                    <select
-                      name="DataTables_Table_0_length"
-                      aria-controls="DataTables_Table_0"
-                      class="form-select form-select-sm"
-                    >
-                      <option value="10">10</option>
-                      <option value="25">25</option>
-                      <option value="50">50</option>
-                      <option value="100">100</option>
-                    </select>
-                    Entries</label
-                  >
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-6">
-                <div id="DataTables_Table_0_filter" class="dataTables_filter text-end">
-                  <label>
-                    <input
-                      type="search"
-                      class="form-control form-control-sm"
-                      placeholder="Search"
-                      aria-controls="DataTables_Table_0"
-                  /></label>
-                </div>
+      <alert v-if="notificationStore.notification"
+        :type="notificationStore.notification.status === 'error' ? 'danger' : notificationStore.notification.status"
+        :icon="notificationStore.notification.status === 'error' ? 'alert-octagon' : 'check-circle'"
+        :message="notificationStore.notification.message" @update:message="notificationStore.clearNotification()" />
+
+      <card title="Hostel Rooms" v-model:dateRange="dateRange" v-model:currentSort="currentSort"
+        @update:currentSort="sortData" v-model:rowsPerPage="rowsPerPage" v-model:searchQuery="searchQuery"
+        :show-filter="true" @filter-apply="applyFilter" @filter-reset="resetFilter">
+        <template #filter-body>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="form-label">Hostel</label>
+                <vue-select v-model="filterHostel" :options="hostelOptions" placeholder="Select Hostel" />
               </div>
             </div>
-
-            <a-table
-              class="table datatable thead-light"
-              :columns="columns"
-              :data-source="data"
-              :row-selection="rowSelection"
-            >
-              <template #bodyCell="{ column, record }">
-                <template v-if="column.key === 'ID'">
-                  <div>
-                    <a href="javascript:void(0);" class="link-primary">{{ record.ID }}</a>
-                  </div>
-                </template>
-                <template v-if="column.key === 'action'">
-                  <div class="d-flex align-items-center">
-                    <div class="dropdown">
-                      <a
-                        href="javascript:void(0);"
-                        class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <i class="ti ti-dots-vertical fs-14"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-right p-3">
-                        <li>
-                          <a
-                            class="dropdown-item rounded-1"
-                            href="javascript:void(0);"
-                            data-bs-toggle="modal"
-                            data-bs-target="#edit_hostel_rooms"
-                            ><i class="ti ti-edit-circle me-2"></i>Edit</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item rounded-1"
-                            href="javascript:void(0);"
-                            data-bs-toggle="modal"
-                            data-bs-target="#delete-modal"
-                            ><i class="ti ti-trash-x me-2"></i>Delete</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </template>
-              </template>
-            </a-table>
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="form-label">Room Type</label>
+                <vue-select v-model="filterRoomType" :options="roomTypeOptions" placeholder="Select Type" />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="form-label">No of Beds</label>
+                <vue-select v-model="filterBeds" :options="bedOptions" placeholder="Select Number" />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="form-label">Status</label>
+                <vue-select v-model="filterStatus" :options="statusOptions" placeholder="Select Status" />
+              </div>
+            </div>
           </div>
+        </template>
+        <div class="custom-datatable-filter table-responsive">
+          <a-table class="table datatable thead-light" :columns="columns" :row-selection="rowSelection" :pagination="{
+            current: hostelRoomsStore.currentPage,
+            pageSize: hostelRoomsStore.perPage,
+            total: hostelRoomsStore.total,
+            showSizeChanger: true,
+            showQuickJumper: true
+          }" :data-source="rooms" @change="handleTableChange">
+            <template #bodyCell="{ column, record }">
+              <template v-if="column.key === 'hostel_room_id'">
+                <div>
+                  <a href="javascript:void(0);" class="link-primary">{{ record.RoomID }}</a>
+                </div>
+              </template>
+              <template v-if="column.key === 'Status'">
+                <span :class="record.statusClass" class="badge d-inline-flex align-items-center">
+                  <i class="ti ti-circle-filled fs-5 me-1"></i>{{ record.Status }}
+                </span>
+              </template>
+              <template v-if="column.key === 'action'">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown">
+                    <a href="javascript:void(0);"
+                      class="btn btn-white btn-icon btn-sm d-flex align-items-center justify-content-center rounded-circle p-0"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="ti ti-dots-vertical fs-14"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right p-3">
+                      <li>
+                        <a class="dropdown-item rounded-1" href="javascript:void(0);" data-bs-toggle="modal"
+                          data-bs-target="#edit_hostel_rooms"
+                          @click="selectedRoom = { id: record.id, ...record.originalAttributes }"><i
+                            class="ti ti-edit-circle me-2"></i>Edit</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item rounded-1" href="javascript:void(0);" @click="handleDelete(record.id)"
+                          data-bs-toggle="modal" data-bs-target="#delete-modal"><i
+                            class="ti ti-trash-x me-2"></i>Delete</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </template>
+            </template>
+          </a-table>
         </div>
-      </div>
-      <!-- /Student List -->
+      </card>
     </div>
   </div>
-  <hostel-room-modal></hostel-room-modal>
+  <hostel-room-modal modal-id="add_hostel_rooms" :room-data="selectedRoom" @success="fetchData"></hostel-room-modal>
+  <hostel-room-modal modal-id="edit_hostel_rooms" :is-edit="true" :room-data="selectedRoom"
+    @success="fetchData"></hostel-room-modal>
+  <delete-confirm-modal modal-id="delete-modal" @confirmed="confirmDelete"></delete-confirm-modal>
 </template>
-<script>
+
+<script setup>
+import { ref, onMounted, computed, watch } from 'vue';
+import VueSelect from 'vue3-select2-component';
+import moment from "moment";
+import { useAuthStore } from '@/stores/auth';
+import { useHostelRoomsStore } from '@/stores/hostel-rooms';
+import { useHostelsStore } from '@/stores/hostels';
+import { useHostelRoomTypesStore } from '@/stores/hostel-room-types';
+import { useNotificationStore } from "@/stores/notification";
+
+const authStore = useAuthStore();
+const hostelRoomsStore = useHostelRoomsStore();
+const hostelsStore = useHostelsStore();
+const hostelRoomTypesStore = useHostelRoomTypesStore();
+const notificationStore = useNotificationStore();
+
+const title = "Hostel Rooms";
+const text = "Dashboard";
+const text1 = "Management";
+const text2 = "Hostel Rooms";
+
+const selectedRoom = ref({});
+const today = new Date();
+const dateRange = ref([today, today]);
+const rowsPerPage = ref(hostelRoomsStore.perPage);
+let currentSort = ref('asc');
+const searchQuery = ref('');
+
+const filterStatus = ref('Select');
+const statusOptions = ref(['Select', 'Active', 'Inactive']);
+
+const filterHostel = ref('Select');
+const hostelOptions = ref(['Select']);
+
+const filterRoomType = ref('Select');
+const roomTypeOptions = ref(['Select']);
+
+const filterBeds = ref('Select');
+const bedOptions = ref(['Select', '1', '2', '3', '4', '5']);
+
 const columns = [
   {
-    sorter: false,
-  },
-  {
     title: "ID",
-    dataIndex: "ID",
-    key: "ID",
-    sorter: {
-      compare: (a, b) => {
-        a = a.ID.toLowerCase();
-        b = b.ID.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "hostel_room_id",
+    key: "hostel_room_id",
+    sorter: true,
   },
   {
     title: "Room No",
-    dataIndex: "RoomNo",
-    sorter: {
-      compare: (a, b) => {
-        a = a.RoomNo.toLowerCase();
-        b = b.RoomNo.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "room_number",
+    key: "room_number",
+    sorter: true,
   },
   {
     title: "Hostel Name",
-    dataIndex: "HostelName",
-    sorter: {
-      compare: (a, b) => {
-        a = a.HostelName.toLowerCase();
-        b = b.HostelName.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "hostel_name",
+    key: "hostel_name",
+    sorter: true,
   },
   {
     title: "Room Type",
-    dataIndex: "RoomType",
-    sorter: {
-      compare: (a, b) => {
-        a = a.RoomType.toLowerCase();
-        b = b.RoomType.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "room_type_name",
+    key: "room_type_name",
+    sorter: true,
   },
   {
     title: "No of Bed",
-    dataIndex: "NoofBed",
-    sorter: {
-      compare: (a, b) => {
-        a = a.NoofBed.toLowerCase();
-        b = b.NoofBed.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    dataIndex: "number_of_beds",
+    key: "number_of_beds",
+    sorter: true,
   },
   {
-    title: "Cost Per Bed",
-    dataIndex: "CostperBed",
-    sorter: {
-      compare: (a, b) => {
-        a = a.CostperBed.toLowerCase();
-        b = b.CostperBed.toLowerCase();
-        return a > b ? -1 : b > a ? 1 : 0;
-      },
-    },
+    title: computed(() => `Cost Per Bed (${authStore.currency})`),
+    dataIndex: "cost_per_bed",
+    key: "cost_per_bed",
+    sorter: true,
+  },
+  {
+    title: "Status",
+    dataIndex: "Status",
+    key: "Status",
+    sorter: true,
   },
   {
     title: "Action",
     key: "action",
-    sorter: true,
+    width: 80,
   },
 ];
-const data = [
-  {
-    key: "1",
-    ID: "HR819382",
-    RoomNo: "A1",
-    HostelName: "Phoenix Residence",
-    RoomType: "One Bed",
-    NoofBed: "1",
-    CostperBed: "$200",
-  },
-  {
-    key: "2",
-    ID: "HR819381",
-    RoomNo: "A2",
-    HostelName: "Tranquil Haven",
-    RoomType: "One Bed AC",
-    NoofBed: "1",
-    CostperBed: "$300",
-  },
-  {
-    key: "3",
-    ID: "HR819380",
-    RoomNo: "A3",
-    HostelName: "Radiant Towers",
-    RoomType: "Two Bed",
-    NoofBed: "2",
-    CostperBed: "$400",
-  },
-  {
-    key: "4",
-    ID: "HR819379",
-    RoomNo: "A4",
-    HostelName: "Nova Nest",
-    RoomType: "One Bed",
-    NoofBed: "1",
-    CostperBed: "$200",
-  },
-  {
-    key: "5",
-    ID: "HR819378",
-    RoomNo: "B1",
-    HostelName: "Vista Villa",
-    RoomType: "One Bed AC",
-    NoofBed: "1",
-    CostperBed: "$300",
-  },
-  {
-    key: "6",
-    ID: "HR819377",
-    RoomNo: "B2",
-    HostelName: "Zenith Zone",
-    RoomType: "Two Bed",
-    NoofBed: "2",
-    CostperBed: "$400",
-  },
-  {
-    key: "7",
-    ID: "HR819376",
-    RoomNo: "B3",
-    HostelName: "Summit Springs",
-    RoomType: "One Bed",
-    NoofBed: "1",
-    CostperBed: "$200e",
-  },
-  {
-    key: "8",
-    ID: "HR819375",
-    RoomNo: "B4",
-    HostelName: "Beacon Breeze",
-    RoomType: "Two Bed AC",
-    NoofBed: "2",
-    CostperBed: "$600",
-  },
-  {
-    key: "9",
-    ID: "HR819374",
-    RoomNo: "C1",
-    HostelName: "Empyrean Estate",
-    RoomType: "One Bed",
-    NoofBed: "1",
-    CostperBed: "$200",
-  },
-  {
-    key: "10",
-    ID: "HR819373",
-    RoomNo: "C2",
-    HostelName: "Nexus Nook",
-    RoomType: "Two Bed AC",
-    NoofBed: "2",
-    CostperBed: "$600",
-  },
-];
+
 const rowSelection = {
-  onChange: () => {},
-  onSelect: () => {},
-  onSelectAll: () => {},
+  onChange: () => { },
+  onSelect: () => { },
+  onSelectAll: () => { },
 };
-export default {
-  data() {
-    return {
-      title: "Hostel Rooms",
-      text: "Dashboard",
-      text1: "Management",
-      text2: "Hostel Rooms",
-      data,
-      columns,
-      rowSelection,
-    };
-  },
+
+const fetchData = async () => {
+  await hostelRoomsStore.index();
 };
+
+const handleTableChange = (pagination, filters, sorter) => {
+  hostelRoomsStore.currentPage = pagination.current;
+  hostelRoomsStore.perPage = pagination.pageSize;
+  rowsPerPage.value = pagination.pageSize;
+
+  if (sorter && sorter.order) {
+    const sortOrder = sorter.order === 'ascend' ? 'asc' : 'desc';
+    currentSort.value = sortOrder;
+    hostelRoomsStore.sort = sortOrder;
+  }
+
+  fetchData();
+};
+
+const sortData = (sortType) => {
+  currentSort.value = sortType;
+  hostelRoomsStore.sort = sortType;
+  fetchData();
+};
+
+const exportData = async (type) => {
+  hostelRoomsStore.exportType = type;
+  await hostelRoomsStore.export();
+};
+
+const handleDelete = (id) => {
+  hostelRoomsStore.id = id;
+};
+
+const confirmDelete = async () => {
+  if (hostelRoomsStore.id) {
+    const success = await hostelRoomsStore.destroy(hostelRoomsStore.id);
+    if (success) {
+      fetchData();
+    }
+  }
+};
+
+const openAddModal = () => {
+  selectedRoom.value = {};
+};
+
+const applyFilter = () => {
+  hostelRoomsStore.status = filterStatus.value === 'Select' ? null : filterStatus.value.toLowerCase();
+  hostelRoomsStore.hostelId = filterHostel.value === 'Select' ? null : filterHostel.value;
+  hostelRoomsStore.roomTypeId = filterRoomType.value === 'Select' ? null : filterRoomType.value;
+  hostelRoomsStore.numberOfBeds = filterBeds.value === 'Select' ? null : filterBeds.value;
+  hostelRoomsStore.currentPage = 1;
+  fetchData();
+};
+
+const resetFilter = () => {
+  filterStatus.value = 'Select';
+  filterHostel.value = 'Select';
+  filterRoomType.value = 'Select';
+  filterBeds.value = 'Select';
+
+  hostelRoomsStore.status = null;
+  hostelRoomsStore.hostelId = null;
+  hostelRoomsStore.roomTypeId = null;
+  hostelRoomsStore.numberOfBeds = null;
+  hostelRoomsStore.currentPage = 1;
+  fetchData();
+};
+
+watch(rowsPerPage, (newVal) => {
+  hostelRoomsStore.perPage = parseInt(newVal);
+  hostelRoomsStore.currentPage = 1;
+  fetchData();
+});
+
+watch(dateRange, (newRange) => {
+  const m = moment.default || moment;
+  if (Array.isArray(newRange) && newRange.length === 2) {
+    const [start, end] = newRange;
+    hostelRoomsStore.dateStart = m(start).format('YYYY-MM-DD');
+    hostelRoomsStore.dateEnd = m(end).format('YYYY-MM-DD');
+    hostelRoomsStore.currentPage = 1;
+    fetchData();
+  }
+});
+
+watch(searchQuery, (newVal) => {
+  hostelRoomsStore.search = newVal;
+  hostelRoomsStore.currentPage = 1;
+  fetchData();
+});
+
+onMounted(async () => {
+  fetchData();
+
+  // Load filter options
+  if (hostelsStore.hostels.length === 0) await hostelsStore.index();
+  if (hostelRoomTypesStore.roomTypes.length === 0) await hostelRoomTypesStore.index();
+
+  hostelOptions.value = ['Select', ...hostelsStore.hostels.map(h => ({
+    id: h.id,
+    text: h.attributes?.name || h.name
+  }))];
+
+  roomTypeOptions.value = ['Select', ...hostelRoomTypesStore.roomTypes.map(t => ({
+    id: t.id,
+    text: t.attributes?.name || t.name
+  }))];
+});
+
+const rooms = computed(() => (hostelRoomsStore.rooms || []).map((item, index) => {
+  const attr = item.attributes || {};
+  return {
+    key: index + 1,
+    id: item.id,
+    RoomID: attr.hostel_room_id,
+    room_number: attr.room_number,
+    hostel_name: attr.hostel_name,
+    room_type_name: attr.room_type_name,
+    number_of_beds: attr.number_of_beds,
+    cost_per_bed: `${authStore.currency}${attr.cost_per_bed}`,
+    Status: attr.status ? attr.status.charAt(0).toUpperCase() + attr.status.slice(1) : 'Active',
+    statusClass: attr.status === 'inactive' ? 'badge-soft-danger' : 'badge-soft-success',
+    originalAttributes: attr
+  };
+}));
 </script>

@@ -5,12 +5,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Add New Driver</h4>
-          <button
-            type="button"
-            class="btn-close custom-btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
             <i class="ti ti-x"></i>
           </button>
         </div>
@@ -24,28 +19,18 @@
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Phone Number</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Phone Number"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter Phone Number" />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Driving License Number</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Driving License Number"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter Driving License Number" />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Address</label>
                   <input type="text" class="form-control" placeholder="Enter Address" />
                 </div>
               </div>
-              <div
-                class="modal-satus-toggle d-flex align-items-center justify-content-between"
-              >
+              <div class="modal-satus-toggle d-flex align-items-center justify-content-between">
                 <div class="status-title">
                   <h5>Status</h5>
                   <p>Change the Status by toggle</p>
@@ -73,12 +58,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Edit Driver</h4>
-          <button
-            type="button"
-            class="btn-close custom-btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal" aria-label="Close">
             <i class="ti ti-x"></i>
           </button>
         </div>
@@ -88,44 +68,24 @@
               <div class="col-md-12">
                 <div class="mb-3">
                   <label class="form-label">Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Name"
-                    value="Thomas"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter Name" value="Thomas" />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Phone Number</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Phone Number"
-                    value="+1 64044 74890"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter Phone Number" value="+1 64044 74890" />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Driving License Number</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Driving License Number"
-                    value="LC7899456689"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter Driving License Number"
+                    value="LC7899456689" />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Address</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter Address"
-                    value="2233 Wood Street, Slidell, LA"
-                  />
+                  <input type="text" class="form-control" placeholder="Enter Address"
+                    value="2233 Wood Street, Slidell, LA" />
                 </div>
               </div>
-              <div
-                class="modal-satus-toggle d-flex align-items-center justify-content-between"
-              >
+              <div class="modal-satus-toggle d-flex align-items-center justify-content-between">
                 <div class="status-title">
                   <h5>Status</h5>
                   <p>Change the Status by toggle</p>
@@ -162,12 +122,7 @@
               delete.
             </p>
             <div class="d-flex justify-content-center">
-              <a
-                href="javascript:void(0);"
-                class="btn btn-light me-3"
-                data-bs-dismiss="modal"
-                >Cancel</a
-              >
+              <a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
               <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Yes, Delete</button>
             </div>
           </div>
@@ -184,7 +139,7 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$router.push("/transport/transport-vehicle-drivers");
+      this.$router.push("/transport/vehicle-drivers");
     },
   },
 };

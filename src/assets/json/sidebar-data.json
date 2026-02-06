@@ -532,15 +532,15 @@
         "subMenus": [
           {
             "menuValue": "Routes",
-            "route": "/transport/transport-routes",
-            "active_link": "/transport/transport-routes",
+            "route": "/transport/routes",
+            "active_link": "/transport/routes",
             "hasSubRoute": false,
             "showSubRoute": false
           },
           {
             "menuValue": "Pickup Points",
-            "route": "/transport/transport-pickup-points",
-            "active_link": "/transport/transport-pickup-points",
+            "route": "/transport/pickup-points",
+            "active_link": "/transport/pickup-points",
             "hasSubRoute": false,
             "showSubRoute": false
           },
@@ -553,15 +553,15 @@
           },
           {
             "menuValue": "Vehicle",
-            "route": "/transport/transport-vehicle",
-            "active_link": "/transport/transport-vehicle",
+            "route": "/transport/vehicle",
+            "active_link": "/transport/vehicle",
             "hasSubRoute": false,
             "showSubRoute": false
           },
           {
             "menuValue": "Assign Vehicle",
-            "route": "/transport/transport-assign-vehicle",
-            "active_link": "/transport/transport-assign-vehicle",
+            "route": "/transport/assign-vehicle",
+            "active_link": "/transport/assign-vehicle",
             "hasSubRoute": false,
             "showSubRoute": false
           }
@@ -1114,13 +1114,6 @@
         "route": "/settings",
         "active_link": "settings",
         "subMenus": [
-          {
-            "menuValue": "Profile Settings",
-            "route": "/settings/profile-settings",
-            "active_link": "/settings/profile-settings",
-            "hasSubRoute": false,
-            "showSubRoute": false
-          },
           {
             "menuValue": "Security Settings",
             "route": "/settings/security-settings",
@@ -1924,20 +1917,6 @@
       {
         "menuValue": "Documentation",
         "icon": "ti-file-text",
-        "route": "/",
-        "hasSubRoute": false,
-        "showSubRoute": false
-      },
-      {
-        "menuValue": "Changelog",
-        "icon": "ti-exchange",
-        "route": "/",
-        "hasSubRoute": false,
-        "showSubRoute": false
-      },
-      {
-        "menuValue": "Multi Level",
-        "icon": "ti-menu-2",
         "route": "/",
         "hasSubRoute": false,
         "showSubRoute": false
